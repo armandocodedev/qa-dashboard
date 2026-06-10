@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agentic QA Dashboard | Armando Code</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="https://armandocode.com">Armando Code</a>
+      <div class="nav-links">
+        <a href="#flows">Flows</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#roadmap">Roadmap</a>
+      </div>
+    </nav>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">AI-powered QA automation portfolio</p>
+        <h1>Agentic Testing Dashboard</h1>
+        <p class="lede">
+          A browser-driving AI testing agent that explores public demo applications,
+          generates Playwright specs, runs them, repairs failures, and publishes test summaries.
+        </p>
+      </div>
+      <aside class="status-panel" aria-label="Latest status summary">
+        <span class="status-dot"></span>
+        <strong>Latest public demo suite</strong>
+        <p>9 Playwright tests passed across Sauce Demo and Shopify demo flows.</p>
+      </aside>
+    </section>
+  </header>
+
+  <main>
+    <section class="metrics" aria-label="Project metrics">
+      <article>
+        <strong>3</strong>
+        <span>Demo apps/flows</span>
+      </article>
+      <article>
+        <strong>9</strong>
+        <span>Committed tests passing</span>
+      </article>
+      <article>
+        <strong>GPT-5</strong>
+        <span>Generation model</span>
+      </article>
+      <article>
+        <strong>2 days</strong>
+        <span>Target report retention</span>
+      </article>
+    </section>
+
+    <section id="flows" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Current coverage</p>
+        <h2>Public Demo Flows</h2>
+      </div>
+      <div class="flow-grid">
+        <article class="flow-card">
+          <div class="card-topline">
+            <span class="badge passed">Passed</span>
+            <span>3 tests</span>
+          </div>
+          <h3>Sauce Demo Login</h3>
+          <p>Validates login page controls, successful login, inventory visibility, and product detail navigation.</p>
+          <dl>
+            <div><dt>Target</dt><dd>saucedemo.com</dd></div>
+            <div><dt>Tools</dt><dd>Playwright, Chromium</dd></div>
+          </dl>
+        </article>
+
+        <article class="flow-card">
+          <div class="card-topline">
+            <span class="badge passed">Passed</span>
+            <span>3 tests</span>
+          </div>
+          <h3>Sauce Demo Checkout</h3>
+          <p>Covers login, add-to-cart, cart update, fake checkout, order completion, and return home.</p>
+          <dl>
+            <div><dt>Safety</dt><dd>Public demo checkout</dd></div>
+            <div><dt>Repair</dt><dd>Ready</dd></div>
+          </dl>
+        </article>
+
+        <article class="flow-card">
+          <div class="card-topline">
+            <span class="badge passed">Passed</span>
+            <span>3 tests</span>
+          </div>
+          <h3>Shopify Demo Cart</h3>
+          <p>Checks catalog content, product detail pages, safe add-to-cart behavior, and external link hrefs.</p>
+          <dl>
+            <div><dt>Target</dt><dd>sauce-demo.myshopify.com</dd></div>
+            <div><dt>Boundary</dt><dd>No real checkout</dd></div>
+          </dl>
+        </article>
+      </div>
+    </section>
+
+    <section id="architecture" class="section architecture">
+      <div class="section-heading">
+        <p class="eyebrow">How it works</p>
+        <h2>Agent Pipeline</h2>
+      </div>
+      <ol class="pipeline">
+        <li><strong>Explore</strong><span>Playwright opens the target page and the model chooses safe next actions.</span></li>
+        <li><strong>Generate</strong><span>The model turns the exploration trace into Playwright tests.</span></li>
+        <li><strong>Execute</strong><span>The generated spec runs in Chromium with traces and screenshots on failure.</span></li>
+        <li><strong>Repair</strong><span>Failures are sent back to the model for selector and assertion repair.</span></li>
+        <li><strong>Report</strong><span>Runs produce dashboard data and Playwright reports for review.</span></li>
+      </ol>
+    </section>
+
+    <section id="roadmap" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Next steps</p>
+        <h2>Portfolio Roadmap</h2>
+      </div>
+      <div class="roadmap-grid">
+        <article>
+          <h3>Live Report Publishing</h3>
+          <p>Publish the latest dashboard and report artifacts to a stable URL.</p>
+        </article>
+        <article>
+          <h3>Multi-Project Views</h3>
+          <p>Group test suites by product, client demo, or application type.</p>
+        </article>
+        <article>
+          <h3>Specialized Agents</h3>
+          <p>Split exploration, repair, accessibility, and reporting into focused roles when complexity grows.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Agentic QA portfolio by Armando Code</span>
+    <a href="https://github.com/armandocodedev">GitHub</a>
+  </footer>
+</body>
+</html>
