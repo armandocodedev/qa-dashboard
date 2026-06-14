@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy & Cookies | Agentic QA Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="index.html">Armando Code</a>
+      <div class="nav-links">
+        <a href="index.html#flows">Flows</a>
+        <a href="index.html#architecture">Architecture</a>
+        <a href="index.html#roadmap">Roadmap</a>
+      </div>
+    </nav>
+    <section class="hero policy-hero">
+      <div>
+        <p class="eyebrow">Privacy notice</p>
+        <h1>Privacy & Cookies</h1>
+        <p class="lede">How this dashboard uses analytics and stores consent choices.</p>
+      </div>
+    </section>
+  </header>
+
+  <main class="policy-page">
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Analytics</p>
+        <h2>Google Analytics</h2>
+      </div>
+      <p>This site uses Google Analytics 4 only after you accept analytics cookies. Analytics helps me understand dashboard visits, viewed pages, and general technical information such as browser, device type, and approximate region.</p>
+      <p>Google Analytics does not give me your name, email address, or direct contact details. I do not sell analytics data.</p>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Consent</p>
+        <h2>Your Choice</h2>
+      </div>
+      <p>You can reject analytics when the cookie banner appears. If you accepted before and want to choose again, use the button below.</p>
+      <button class="cookie-button secondary" type="button" data-reset-cookie-choice>Reset analytics choice</button>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Contact</p>
+        <h2>Questions</h2>
+      </div>
+      <p>Questions about this policy can be sent to <a href="mailto:armandocodedev@gmail.com">armandocodedev@gmail.com</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <span>Agentic QA portfolio by Armando Code</span>
+    <a href="index.html">Back to dashboard</a>
+  </footer>
+
+  <div class="cookie-banner" role="region" aria-label="Cookie consent" hidden>
+    <div>
+      <strong>Analytics cookies</strong>
+      <p>I use Google Analytics to understand dashboard visits and improve this QA portfolio. You can accept or reject analytics tracking.</p>
+    </div>
+    <div class="cookie-actions">
+      <button class="cookie-button secondary" type="button" data-cookie-choice="rejected">Reject</button>
+      <button class="cookie-button primary" type="button" data-cookie-choice="accepted">Accept analytics</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

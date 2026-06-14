@@ -8,6 +8,9 @@
   --accent-dark: #115e59;
   --pass: #15803d;
   --ink: #182230;
+  --font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-heading: "Space Grotesk", Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
 }
 
 * {
@@ -18,7 +21,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font: 16px/1.55 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font: 16px/1.55 var(--font-body);
 }
 
 a {
@@ -41,7 +44,9 @@ a {
 }
 
 .brand {
+  font-family: var(--font-heading);
   font-weight: 800;
+  letter-spacing: 0;
   text-decoration: none;
   color: var(--ink);
 }
@@ -50,7 +55,10 @@ a {
   display: flex;
   gap: 18px;
   color: var(--muted);
-  font-size: 14px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .nav-links a {
@@ -71,6 +79,7 @@ a {
 .eyebrow {
   margin: 0 0 10px;
   color: var(--accent-dark);
+  font-family: var(--font-mono);
   font-size: 13px;
   font-weight: 800;
   letter-spacing: 0;
@@ -85,22 +94,28 @@ p {
 }
 
 h1 {
+  font-family: var(--font-heading);
   max-width: 760px;
   margin: 0;
-  font-size: clamp(42px, 8vw, 82px);
+  font-size: clamp(48px, 9vw, 96px);
+  font-weight: 700;
   line-height: .95;
   letter-spacing: 0;
 }
 
 h2 {
+  font-family: var(--font-heading);
   margin: 0;
-  font-size: 34px;
+  font-size: clamp(36px, 5vw, 48px);
+  font-weight: 700;
   line-height: 1.1;
   letter-spacing: 0;
 }
 
 h3 {
+  font-family: var(--font-heading);
   margin: 12px 0 8px;
+  font-weight: 650;
   font-size: 20px;
 }
 
@@ -121,6 +136,7 @@ h3 {
 
 .status-panel strong {
   display: block;
+  font-family: var(--font-heading);
   margin-top: 10px;
 }
 
@@ -164,6 +180,7 @@ main {
 
 .metrics strong {
   display: block;
+  font-family: var(--font-heading);
   font-size: 30px;
   line-height: 1.1;
 }
@@ -204,12 +221,15 @@ main {
   justify-content: space-between;
   gap: 12px;
   color: var(--muted);
-  font-size: 13px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
 }
 
 .badge {
   display: inline-flex;
   align-items: center;
+  font-family: var(--font-mono);
   padding: 3px 9px;
   border-radius: 999px;
   color: #fff;
@@ -230,6 +250,7 @@ dl {
 
 dt {
   color: var(--muted);
+  font-family: var(--font-mono);
   font-size: 12px;
   font-weight: 800;
   text-transform: uppercase;
@@ -263,6 +284,7 @@ dd {
 
 .pipeline strong {
   color: var(--accent-dark);
+  font-family: var(--font-heading);
 }
 
 .pipeline span {
@@ -278,6 +300,81 @@ footer {
   gap: 18px;
   color: var(--muted);
   border-top: 1px solid var(--line);
+}
+
+.footer-links {
+  display: flex;
+  gap: 16px;
+}
+
+.policy-hero {
+  grid-template-columns: 1fr;
+  min-height: 300px;
+}
+
+.policy-page .section {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin-bottom: 18px;
+  padding: 24px;
+}
+
+.policy-page p {
+  color: var(--muted);
+}
+
+.cookie-banner {
+  align-items: center;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  bottom: 16px;
+  box-shadow: 0 18px 50px rgba(15, 23, 42, .14);
+  color: var(--text);
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  left: 16px;
+  padding: 16px;
+  position: fixed;
+  right: 16px;
+  z-index: 20;
+}
+
+.cookie-banner[hidden] {
+  display: none;
+}
+
+.cookie-banner p {
+  color: var(--muted);
+  margin: 4px 0 0;
+}
+
+.cookie-actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 12px;
+}
+
+.cookie-button {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-weight: 800;
+  padding: 9px 14px;
+}
+
+.cookie-button.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.cookie-button.secondary {
+  background: #f8fafc;
+  color: var(--text);
 }
 
 @media (max-width: 860px) {
@@ -301,5 +398,12 @@ footer {
 
   .pipeline li {
     grid-template-columns: 1fr;
+  }
+
+  .footer-links,
+  .cookie-banner,
+  .cookie-actions {
+    align-items: stretch;
+    flex-direction: column;
   }
 }

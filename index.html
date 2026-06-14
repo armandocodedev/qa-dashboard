@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Agentic QA Dashboard | Armando Code</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -138,7 +141,21 @@
 
   <footer>
     <span>Agentic QA portfolio by Armando Code</span>
-    <a href="https://github.com/armandocodedev">GitHub</a>
+    <span class="footer-links">
+      <a href="privacy.html">Privacy & Cookies</a>
+      <a href="https://github.com/armandocodedev">GitHub</a>
+    </span>
   </footer>
+  <div class="cookie-banner" role="region" aria-label="Cookie consent" hidden>
+    <div>
+      <strong>Analytics cookies</strong>
+      <p>I use Google Analytics to understand dashboard visits and improve this QA portfolio. You can accept or reject analytics tracking.</p>
+    </div>
+    <div class="cookie-actions">
+      <button class="cookie-button secondary" type="button" data-cookie-choice="rejected">Reject</button>
+      <button class="cookie-button primary" type="button" data-cookie-choice="accepted">Accept analytics</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
