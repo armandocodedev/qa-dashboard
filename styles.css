@@ -251,16 +251,126 @@ main {
   margin-bottom: 18px;
 }
 
+.section-heading-row {
+  align-items: end;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.section-note {
+  color: var(--muted);
+  margin: 0;
+  max-width: 420px;
+}
+
 .flow-grid,
-.roadmap-grid {
+.roadmap-grid,
+.chart-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
 }
 
 .flow-card,
-.roadmap-grid article {
+.roadmap-grid article,
+.chart-card {
   padding: 20px;
+}
+
+.chart-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 18px 50px rgba(74, 20, 100, .08);
+}
+
+.chart-topline,
+.chart-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.chart-topline {
+  align-items: center;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.chart-topline strong {
+  color: var(--accent-dark);
+  font-family: var(--font-heading);
+  font-size: 22px;
+  line-height: 1;
+  text-transform: none;
+}
+
+.trend-chart {
+  display: block;
+  height: auto;
+  margin: 18px 0 10px;
+  overflow: visible;
+  width: 100%;
+}
+
+.chart-card:nth-child(1) .trend-chart {
+  color: var(--accent);
+}
+
+.chart-card:nth-child(2) .trend-chart {
+  color: var(--accent-bright);
+}
+
+.chart-card:nth-child(3) .trend-chart {
+  color: #c2410c;
+}
+
+.trend-chart circle {
+  fill: var(--panel);
+  stroke: currentColor;
+  stroke-width: 4;
+}
+
+.chart-grid-line {
+  stroke: #eee5f5;
+  stroke-width: 1;
+}
+
+.chart-line {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 6;
+}
+
+.chart-area {
+  opacity: .14;
+}
+
+.coverage {
+  color: var(--accent);
+  fill: var(--accent);
+  stroke: var(--accent);
+}
+
+.repairs {
+  color: var(--accent-bright);
+  stroke: var(--accent-bright);
+}
+
+.flaky {
+  color: #c2410c;
+  stroke: #c2410c;
+}
+
+.chart-footer {
+  color: var(--muted);
+  font-size: 13px;
 }
 
 .flow-card {
@@ -442,8 +552,14 @@ footer {
   .hero,
   .metrics,
   .flow-grid,
-  .roadmap-grid {
+  .roadmap-grid,
+  .chart-grid {
     grid-template-columns: 1fr;
+  }
+
+  .section-heading-row {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .hero {

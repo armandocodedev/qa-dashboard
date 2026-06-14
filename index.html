@@ -18,6 +18,7 @@
         <span class="sr-only">Armando Code</span>
       </a>
       <div class="nav-links">
+        <a href="#trends">Trends</a>
         <a href="#flows">Flows</a>
         <a href="#architecture">Architecture</a>
         <a href="#roadmap">Roadmap</a>
@@ -43,21 +44,99 @@
   <main>
     <section class="metrics" aria-label="Project metrics">
       <article>
-        <strong>3</strong>
-        <span>Demo apps/flows</span>
+        <strong>16</strong>
+        <span>Generated test inventory</span>
       </article>
       <article>
-        <strong>9</strong>
-        <span>Committed tests passing</span>
+        <strong>93</strong>
+        <span>Generated assertions</span>
       </article>
       <article>
-        <strong>GPT-5</strong>
-        <span>Generation model</span>
+        <strong>0</strong>
+        <span>Auto repairs applied</span>
       </article>
       <article>
-        <strong>2 days</strong>
-        <span>Target report retention</span>
+        <strong>0</strong>
+        <span>Flaky tests reported</span>
       </article>
+    </section>
+
+    <section id="trends" class="section">
+      <div class="section-heading section-heading-row">
+        <div>
+          <p class="eyebrow">Agent telemetry</p>
+          <h2>Autonomy Trends</h2>
+        </div>
+        <p class="section-note">Baseline from generated specs and saved run history. Daily Shopify generation will extend these charts over time.</p>
+      </div>
+      <div class="chart-grid" aria-label="Agentic testing trend charts">
+        <article class="chart-card">
+          <div class="chart-topline">
+            <span>Coverage growth</span>
+            <strong>1 -> 16</strong>
+          </div>
+          <svg class="trend-chart" viewBox="0 0 520 180" role="img" aria-label="Coverage growth from one saved generated test to sixteen generated tests">
+            <line class="chart-grid-line" x1="28" y1="32" x2="492" y2="32"></line>
+            <line class="chart-grid-line" x1="28" y1="88" x2="492" y2="88"></line>
+            <line class="chart-grid-line" x1="28" y1="144" x2="492" y2="144"></line>
+            <path class="chart-area coverage" d="M28 137 L144 128 L260 101 L376 65 L492 25 L492 144 L28 144 Z"></path>
+            <path class="chart-line coverage" d="M28 137 L144 128 L260 101 L376 65 L492 25"></path>
+            <circle cx="28" cy="137" r="5"></circle>
+            <circle cx="144" cy="128" r="5"></circle>
+            <circle cx="260" cy="101" r="5"></circle>
+            <circle cx="376" cy="65" r="5"></circle>
+            <circle cx="492" cy="25" r="5"></circle>
+          </svg>
+          <div class="chart-footer">
+            <span>Saved run</span>
+            <span>Generated inventory</span>
+          </div>
+        </article>
+
+        <article class="chart-card">
+          <div class="chart-topline">
+            <span>Autonomous repairs</span>
+            <strong>0 applied</strong>
+          </div>
+          <svg class="trend-chart" viewBox="0 0 520 180" role="img" aria-label="Autonomous repairs currently at zero applied repairs">
+            <line class="chart-grid-line" x1="28" y1="32" x2="492" y2="32"></line>
+            <line class="chart-grid-line" x1="28" y1="88" x2="492" y2="88"></line>
+            <line class="chart-grid-line" x1="28" y1="144" x2="492" y2="144"></line>
+            <path class="chart-line repairs" d="M28 144 L144 144 L260 144 L376 144 L492 144"></path>
+            <circle cx="28" cy="144" r="5"></circle>
+            <circle cx="144" cy="144" r="5"></circle>
+            <circle cx="260" cy="144" r="5"></circle>
+            <circle cx="376" cy="144" r="5"></circle>
+            <circle cx="492" cy="144" r="5"></circle>
+          </svg>
+          <div class="chart-footer">
+            <span>Repair loop enabled</span>
+            <span>No repair needed yet</span>
+          </div>
+        </article>
+
+        <article class="chart-card">
+          <div class="chart-topline">
+            <span>Flakiness signals</span>
+            <strong>0 flaky</strong>
+          </div>
+          <svg class="trend-chart" viewBox="0 0 520 180" role="img" aria-label="Flakiness signals currently at zero flaky tests">
+            <line class="chart-grid-line" x1="28" y1="32" x2="492" y2="32"></line>
+            <line class="chart-grid-line" x1="28" y1="88" x2="492" y2="88"></line>
+            <line class="chart-grid-line" x1="28" y1="144" x2="492" y2="144"></line>
+            <path class="chart-line flaky" d="M28 144 L144 144 L260 144 L376 144 L492 144"></path>
+            <circle cx="28" cy="144" r="5"></circle>
+            <circle cx="144" cy="144" r="5"></circle>
+            <circle cx="260" cy="144" r="5"></circle>
+            <circle cx="376" cy="144" r="5"></circle>
+            <circle cx="492" cy="144" r="5"></circle>
+          </svg>
+          <div class="chart-footer">
+            <span>Tracked by Playwright</span>
+            <span>No flaky signal yet</span>
+          </div>
+        </article>
+      </div>
     </section>
 
     <section id="flows" class="section">
