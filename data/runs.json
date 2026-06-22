@@ -1,1 +1,30 @@
-[]
+[
+  {
+    "id": "2026-06-22t16-30-58-702z-live-saucedemo-locked-user",
+    "url": "https://www.saucedemo.com/",
+    "suiteName": "live-saucedemo-locked-user",
+    "model": "gpt-5",
+    "status": "passed",
+    "startedAt": "2026-06-22T16:30:58.702Z",
+    "finishedAt": "2026-06-22T16:31:52.420Z",
+    "durationMs": 53718,
+    "repairsApplied": 0,
+    "generatedTests": 3,
+    "generatedAssertions": 19,
+    "exploredSteps": 3,
+    "discovered": {
+      "links": 0,
+      "forms": 1,
+      "buttons": 1,
+      "headings": 0
+    },
+    "testSummary": {
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "timedOut": false
+    },
+    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/27968006536"
+  }
+]
