@@ -266,7 +266,8 @@ main {
 
 .flow-grid,
 .roadmap-grid,
-.chart-grid {
+.chart-grid,
+.run-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
@@ -274,8 +275,85 @@ main {
 
 .flow-card,
 .roadmap-grid article,
-.chart-card {
+.chart-card,
+.run-card {
   padding: 20px;
+}
+
+.run-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  border-top: 4px solid var(--accent);
+}
+
+.run-card.failed {
+  border-top-color: #c2410c;
+}
+
+.run-card.generated {
+  border-top-color: var(--accent-soft);
+}
+
+.run-card p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.run-topline,
+.run-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.run-topline {
+  align-items: center;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.run-meta {
+  border-top: 1px solid var(--line);
+  flex-wrap: wrap;
+  margin-top: 16px;
+  padding-top: 14px;
+}
+
+.run-meta span,
+.run-link {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.run-link {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  margin-top: 14px;
+}
+
+.badge.failed {
+  background: #c2410c;
+}
+
+.badge.generated {
+  background: var(--accent);
+}
+
+.status-dot.failed {
+  background: #c2410c;
+  box-shadow: 0 0 0 6px rgba(194, 65, 12, .13);
+}
+
+.status-dot.generated {
+  background: var(--accent);
+  box-shadow: 0 0 0 6px rgba(124, 21, 167, .13);
+}
+
+.empty-run {
+  grid-column: 1 / -1;
 }
 
 .chart-card {
@@ -553,7 +631,8 @@ footer {
   .metrics,
   .flow-grid,
   .roadmap-grid,
-  .chart-grid {
+  .chart-grid,
+  .run-grid {
     grid-template-columns: 1fr;
   }
 

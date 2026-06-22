@@ -34,9 +34,9 @@
         </p>
       </div>
       <aside class="status-panel" aria-label="Latest status summary">
-        <span class="status-dot"></span>
-        <strong>Latest public demo suite</strong>
-        <p>9 Playwright tests passed across Sauce Demo and Shopify demo flows.</p>
+        <span class="status-dot" id="latest-status-dot"></span>
+        <strong id="latest-status-title">Latest public demo suite</strong>
+        <p id="latest-status-summary">9 Playwright tests passed across Sauce Demo and Shopify demo flows.</p>
       </aside>
     </section>
   </header>
@@ -44,20 +44,20 @@
   <main>
     <section class="metrics" aria-label="Project metrics">
       <article>
-        <strong>16</strong>
-        <span>Generated test inventory</span>
+        <strong id="metric-generated-tests">16</strong>
+        <span>Tests generated / 48h</span>
       </article>
       <article>
-        <strong>93</strong>
-        <span>Generated assertions</span>
+        <strong id="metric-generated-assertions">93</strong>
+        <span>Assertions / 48h</span>
       </article>
       <article>
-        <strong>0</strong>
-        <span>Auto repairs applied</span>
+        <strong id="metric-repairs">0</strong>
+        <span>Auto repairs / 48h</span>
       </article>
       <article>
-        <strong>0</strong>
-        <span>Flaky tests reported</span>
+        <strong id="metric-flaky">0</strong>
+        <span>Flaky signals / 48h</span>
       </article>
     </section>
 
@@ -73,9 +73,9 @@
         <article class="chart-card">
           <div class="chart-topline">
             <span>Coverage growth</span>
-            <strong>1 -> 16</strong>
+            <strong id="trend-coverage-label">1 -> 16</strong>
           </div>
-          <svg class="trend-chart" viewBox="0 0 520 180" role="img" aria-label="Coverage growth from one saved generated test to sixteen generated tests">
+          <svg class="trend-chart" id="trend-coverage-chart" viewBox="0 0 520 180" role="img" aria-label="Coverage growth from one saved generated test to sixteen generated tests">
             <line class="chart-grid-line" x1="28" y1="32" x2="492" y2="32"></line>
             <line class="chart-grid-line" x1="28" y1="88" x2="492" y2="88"></line>
             <line class="chart-grid-line" x1="28" y1="144" x2="492" y2="144"></line>
@@ -96,9 +96,9 @@
         <article class="chart-card">
           <div class="chart-topline">
             <span>Autonomous repairs</span>
-            <strong>0 applied</strong>
+            <strong id="trend-repairs-label">0 applied</strong>
           </div>
-          <svg class="trend-chart" viewBox="0 0 520 180" role="img" aria-label="Autonomous repairs currently at zero applied repairs">
+          <svg class="trend-chart" id="trend-repairs-chart" viewBox="0 0 520 180" role="img" aria-label="Autonomous repairs currently at zero applied repairs">
             <line class="chart-grid-line" x1="28" y1="32" x2="492" y2="32"></line>
             <line class="chart-grid-line" x1="28" y1="88" x2="492" y2="88"></line>
             <line class="chart-grid-line" x1="28" y1="144" x2="492" y2="144"></line>
@@ -118,9 +118,9 @@
         <article class="chart-card">
           <div class="chart-topline">
             <span>Flakiness signals</span>
-            <strong>0 flaky</strong>
+            <strong id="trend-flaky-label">0 flaky</strong>
           </div>
-          <svg class="trend-chart" viewBox="0 0 520 180" role="img" aria-label="Flakiness signals currently at zero flaky tests">
+          <svg class="trend-chart" id="trend-flaky-chart" viewBox="0 0 520 180" role="img" aria-label="Flakiness signals currently at zero flaky tests">
             <line class="chart-grid-line" x1="28" y1="32" x2="492" y2="32"></line>
             <line class="chart-grid-line" x1="28" y1="88" x2="492" y2="88"></line>
             <line class="chart-grid-line" x1="28" y1="144" x2="492" y2="144"></line>
@@ -135,6 +135,22 @@
             <span>Tracked by Playwright</span>
             <span>No flaky signal yet</span>
           </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="live-runs" class="section">
+      <div class="section-heading section-heading-row">
+        <div>
+          <p class="eyebrow">Live CI telemetry</p>
+          <h2>Last 48 Hours</h2>
+        </div>
+        <p class="section-note" id="live-runs-updated">Waiting for the first published agent run.</p>
+      </div>
+      <div class="run-grid" id="live-run-list" aria-live="polite">
+        <article class="run-card empty-run">
+          <h3>No live runs published yet</h3>
+          <p>The scheduled agent workflow will populate this section automatically.</p>
         </article>
       </div>
     </section>
