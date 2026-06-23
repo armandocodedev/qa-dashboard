@@ -86,6 +86,7 @@ a {
 
 .nav-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 18px;
   color: var(--muted);
   font-family: var(--font-mono);
@@ -669,6 +670,11 @@ footer {
   footer {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .nav-links {
+    gap: 10px 14px;
+    width: 100%;
   }
 
   .brand-mark {
