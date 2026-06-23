@@ -1,5 +1,33 @@
 [
   {
+    "id": "2026-06-23t15-36-52-373z-daily-shopify-product-detail",
+    "url": "https://sauce-demo.myshopify.com/",
+    "suiteName": "daily-shopify-product-detail",
+    "model": "gpt-5",
+    "status": "failed",
+    "startedAt": "2026-06-23T15:36:52.373Z",
+    "finishedAt": "2026-06-23T15:39:54.562Z",
+    "durationMs": 182189,
+    "repairsApplied": 1,
+    "generatedTests": 4,
+    "generatedAssertions": 25,
+    "exploredSteps": 5,
+    "discovered": {
+      "links": 21,
+      "forms": 0,
+      "buttons": 1,
+      "headings": 3
+    },
+    "testSummary": {
+      "passed": 2,
+      "failed": 1,
+      "skipped": 0,
+      "flaky": 0,
+      "timedOut": true
+    },
+    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/28037505510"
+  },
+  {
     "id": "2026-06-22t17-16-36-779z-daily-shopify-catalog",
     "url": "https://sauce-demo.myshopify.com/",
     "suiteName": "daily-shopify-catalog",
@@ -25,7 +53,7 @@
       "flaky": 0,
       "timedOut": true
     },
-    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/27970718430"
+    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/28037505510"
   },
   {
     "id": "2026-06-22t16-30-58-702z-live-saucedemo-locked-user",
@@ -53,6 +81,6 @@
       "flaky": 0,
       "timedOut": false
     },
-    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/27970718430"
+    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/28037505510"
   }
 ]
