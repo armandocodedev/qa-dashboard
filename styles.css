@@ -285,6 +285,7 @@ main {
   border: 1px solid var(--line);
   border-radius: 8px;
   border-top: 4px solid var(--accent);
+  box-shadow: 0 18px 50px rgba(74, 20, 100, .08);
 }
 
 .run-card.failed {
@@ -293,6 +294,24 @@ main {
 
 .run-card.generated {
   border-top-color: var(--accent-soft);
+}
+
+.run-card.passed {
+  background: var(--panel);
+  border-top-color: var(--pass);
+  box-shadow: 0 18px 50px rgba(21, 128, 61, .07);
+}
+
+.run-card.passed .badge {
+  background: var(--pass);
+}
+
+.run-card.failed .badge {
+  background: #c2410c;
+}
+
+.run-card.generated .badge {
+  background: var(--accent);
 }
 
 .run-card p {
