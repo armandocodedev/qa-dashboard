@@ -1,5 +1,33 @@
 [
   {
+    "id": "2026-06-24t15-19-57-681z-daily-shopify-cart",
+    "url": "https://sauce-demo.myshopify.com/",
+    "suiteName": "daily-shopify-cart",
+    "model": "gpt-5",
+    "status": "failed",
+    "startedAt": "2026-06-24T15:19:57.681Z",
+    "finishedAt": "2026-06-24T15:25:55.507Z",
+    "durationMs": 357826,
+    "repairsApplied": 1,
+    "generatedTests": 3,
+    "generatedAssertions": 26,
+    "exploredSteps": 5,
+    "discovered": {
+      "links": 21,
+      "forms": 0,
+      "buttons": 1,
+      "headings": 3
+    },
+    "testSummary": {
+      "passed": 0,
+      "failed": 3,
+      "skipped": 0,
+      "flaky": 0,
+      "timedOut": true
+    },
+    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/28109263855"
+  },
+  {
     "id": "2026-06-23t15-36-52-373z-daily-shopify-product-detail",
     "url": "https://sauce-demo.myshopify.com/",
     "suiteName": "daily-shopify-product-detail",
@@ -25,7 +53,7 @@
       "flaky": 0,
       "timedOut": true
     },
-    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/28037505510"
+    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/28109263855"
   },
   {
     "id": "2026-06-22t17-16-36-779z-daily-shopify-catalog",
@@ -53,7 +81,7 @@
       "flaky": 0,
       "timedOut": true
     },
-    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/28037505510"
+    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/28109263855"
   },
   {
     "id": "2026-06-22t16-30-58-702z-live-saucedemo-locked-user",
@@ -81,6 +109,6 @@
       "flaky": 0,
       "timedOut": false
     },
-    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/28037505510"
+    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/28109263855"
   }
 ]
