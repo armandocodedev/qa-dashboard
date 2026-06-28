@@ -1,5 +1,33 @@
 [
   {
+    "id": "2026-06-28t14-24-35-424z-daily-shopify-full-smoke",
+    "url": "https://sauce-demo.myshopify.com/",
+    "suiteName": "daily-shopify-full-smoke",
+    "model": "gpt-5",
+    "status": "passed",
+    "startedAt": "2026-06-28T14:24:35.424Z",
+    "finishedAt": "2026-06-28T14:27:56.857Z",
+    "durationMs": 201433,
+    "repairsApplied": 1,
+    "generatedTests": 4,
+    "generatedAssertions": 41,
+    "exploredSteps": 5,
+    "discovered": {
+      "links": 21,
+      "forms": 0,
+      "buttons": 1,
+      "headings": 3
+    },
+    "testSummary": {
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "timedOut": false
+    },
+    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/28325258891"
+  },
+  {
     "id": "2026-06-27t14-15-21-042z-daily-shopify-negative-paths",
     "url": "https://sauce-demo.myshopify.com/",
     "suiteName": "daily-shopify-negative-paths",
@@ -25,7 +53,7 @@
       "flaky": 0,
       "timedOut": false
     },
-    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/28291713291"
+    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/28325258891"
   },
   {
     "id": "2026-06-26t15-12-55-869z-daily-shopify-content",
@@ -53,34 +81,6 @@
       "flaky": 0,
       "timedOut": true
     },
-    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/28291713291"
-  },
-  {
-    "id": "2026-06-25t15-26-02-060z-daily-shopify-links-boundaries",
-    "url": "https://sauce-demo.myshopify.com/",
-    "suiteName": "daily-shopify-links-boundaries",
-    "model": "gpt-5",
-    "status": "failed",
-    "startedAt": "2026-06-25T15:26:02.060Z",
-    "finishedAt": "2026-06-25T15:30:22.288Z",
-    "durationMs": 260228,
-    "repairsApplied": 1,
-    "generatedTests": 3,
-    "generatedAssertions": 29,
-    "exploredSteps": 5,
-    "discovered": {
-      "links": 21,
-      "forms": 0,
-      "buttons": 1,
-      "headings": 3
-    },
-    "testSummary": {
-      "passed": 2,
-      "failed": 1,
-      "skipped": 0,
-      "flaky": 0,
-      "timedOut": true
-    },
-    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/28291713291"
+    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/28325258891"
   }
 ]
