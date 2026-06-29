@@ -1,5 +1,33 @@
 [
   {
+    "id": "2026-06-29t16-25-53-165z-daily-shopify-catalog",
+    "url": "https://sauce-demo.myshopify.com/",
+    "suiteName": "daily-shopify-catalog",
+    "model": "gpt-5",
+    "status": "failed",
+    "startedAt": "2026-06-29T16:25:53.165Z",
+    "finishedAt": "2026-06-29T16:29:42.283Z",
+    "durationMs": 229118,
+    "repairsApplied": 1,
+    "generatedTests": 4,
+    "generatedAssertions": 52,
+    "exploredSteps": 5,
+    "discovered": {
+      "links": 21,
+      "forms": 0,
+      "buttons": 1,
+      "headings": 3
+    },
+    "testSummary": {
+      "passed": 3,
+      "failed": 1,
+      "skipped": 0,
+      "flaky": 0,
+      "timedOut": true
+    },
+    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/28386974037"
+  },
+  {
     "id": "2026-06-28t14-24-35-424z-daily-shopify-full-smoke",
     "url": "https://sauce-demo.myshopify.com/",
     "suiteName": "daily-shopify-full-smoke",
@@ -25,62 +53,6 @@
       "flaky": 0,
       "timedOut": false
     },
-    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/28325258891"
-  },
-  {
-    "id": "2026-06-27t14-15-21-042z-daily-shopify-negative-paths",
-    "url": "https://sauce-demo.myshopify.com/",
-    "suiteName": "daily-shopify-negative-paths",
-    "model": "gpt-5",
-    "status": "passed",
-    "startedAt": "2026-06-27T14:15:21.042Z",
-    "finishedAt": "2026-06-27T14:18:46.395Z",
-    "durationMs": 205353,
-    "repairsApplied": 1,
-    "generatedTests": 5,
-    "generatedAssertions": 34,
-    "exploredSteps": 5,
-    "discovered": {
-      "links": 21,
-      "forms": 0,
-      "buttons": 1,
-      "headings": 3
-    },
-    "testSummary": {
-      "passed": 5,
-      "failed": 0,
-      "skipped": 0,
-      "flaky": 0,
-      "timedOut": false
-    },
-    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/28325258891"
-  },
-  {
-    "id": "2026-06-26t15-12-55-869z-daily-shopify-content",
-    "url": "https://sauce-demo.myshopify.com/",
-    "suiteName": "daily-shopify-content",
-    "model": "gpt-5",
-    "status": "failed",
-    "startedAt": "2026-06-26T15:12:55.869Z",
-    "finishedAt": "2026-06-26T15:17:44.578Z",
-    "durationMs": 288709,
-    "repairsApplied": 1,
-    "generatedTests": 6,
-    "generatedAssertions": 44,
-    "exploredSteps": 5,
-    "discovered": {
-      "links": 21,
-      "forms": 0,
-      "buttons": 1,
-      "headings": 3
-    },
-    "testSummary": {
-      "passed": 2,
-      "failed": 3,
-      "skipped": 0,
-      "flaky": 0,
-      "timedOut": true
-    },
-    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/28325258891"
+    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/28386974037"
   }
 ]
