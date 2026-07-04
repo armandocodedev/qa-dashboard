@@ -20,7 +20,7 @@
       <div class="nav-links">
         <a href="https://armandocode.com">Portfolio</a>
         <a href="#trends">Trends</a>
-        <a href="#flows">Flows</a>
+        <a href="#apps">Applications</a>
         <a href="#architecture">Architecture</a>
         <a href="#roadmap">Roadmap</a>
       </div>
@@ -46,19 +46,19 @@
     <section class="metrics" aria-label="Project metrics">
       <article>
         <strong id="metric-generated-tests">16</strong>
-        <span>Tests generated / 48h</span>
+        <span>Tests generated / 30d</span>
       </article>
       <article>
         <strong id="metric-generated-assertions">93</strong>
-        <span>Assertions / 48h</span>
+        <span>Assertions / 30d</span>
       </article>
       <article>
         <strong id="metric-repairs">0</strong>
-        <span>Auto repairs / 48h</span>
+        <span>Auto repairs / 30d</span>
       </article>
       <article>
         <strong id="metric-flaky">0</strong>
-        <span>Flaky signals / 48h</span>
+        <span>Flaky signals / 30d</span>
       </article>
     </section>
 
@@ -68,7 +68,7 @@
           <p class="eyebrow">Agent telemetry</p>
           <h2>Autonomy Trends</h2>
         </div>
-        <p class="section-note">Baseline from generated specs and saved run history. Daily Shopify generation will extend these charts over time.</p>
+        <p class="section-note">Generated candidates and saved run history across every registered application extend these charts over time.</p>
       </div>
       <div class="chart-grid" aria-label="Agentic testing trend charts">
         <article class="chart-card">
@@ -144,7 +144,7 @@
       <div class="section-heading section-heading-row">
         <div>
           <p class="eyebrow">Live CI telemetry</p>
-          <h2>Last 48 Hours</h2>
+          <h2>Last 30 Days</h2>
         </div>
         <p class="section-note" id="live-runs-updated">Waiting for the first published agent run.</p>
       </div>
@@ -156,51 +156,15 @@
       </div>
     </section>
 
-    <section id="flows" class="section">
-      <div class="section-heading">
-        <p class="eyebrow">Current coverage</p>
-        <h2>Public Demo Flows</h2>
+    <section id="apps" class="section">
+      <div class="section-heading section-heading-row">
+        <div>
+          <p class="eyebrow">Current coverage</p>
+          <h2>Web Applications</h2>
+        </div>
+        <p class="section-note">Permanent regression suites and agent-generated candidates are grouped by application.</p>
       </div>
-      <div class="flow-grid">
-        <article class="flow-card">
-          <div class="card-topline">
-            <span class="badge passed">Passed</span>
-            <span>3 tests</span>
-          </div>
-          <h3>Sauce Demo Login</h3>
-          <p>Validates login page controls, successful login, inventory visibility, and product detail navigation.</p>
-          <dl>
-            <div><dt>Target</dt><dd>saucedemo.com</dd></div>
-            <div><dt>Tools</dt><dd>Playwright, Chromium</dd></div>
-          </dl>
-        </article>
-
-        <article class="flow-card">
-          <div class="card-topline">
-            <span class="badge passed">Passed</span>
-            <span>3 tests</span>
-          </div>
-          <h3>Sauce Demo Checkout</h3>
-          <p>Covers login, add-to-cart, cart update, fake checkout, order completion, and return home.</p>
-          <dl>
-            <div><dt>Safety</dt><dd>Public demo checkout</dd></div>
-            <div><dt>Repair</dt><dd>Ready</dd></div>
-          </dl>
-        </article>
-
-        <article class="flow-card">
-          <div class="card-topline">
-            <span class="badge passed">Passed</span>
-            <span>3 tests</span>
-          </div>
-          <h3>Shopify Demo Cart</h3>
-          <p>Checks catalog content, product detail pages, safe add-to-cart behavior, and external link hrefs.</p>
-          <dl>
-            <div><dt>Target</dt><dd>sauce-demo.myshopify.com</dd></div>
-            <div><dt>Boundary</dt><dd>No real checkout</dd></div>
-          </dl>
-        </article>
-      </div>
+      <div class="app-grid" id="app-list" aria-live="polite"></div>
     </section>
 
     <section id="architecture" class="section architecture">
@@ -228,8 +192,8 @@
           <p>Publish the latest dashboard and report artifacts to a stable URL.</p>
         </article>
         <article>
-          <h3>Multi-Project Views</h3>
-          <p>Group test suites by product, client demo, or application type.</p>
+          <h3>Candidate Promotion</h3>
+          <p>Review validated agent candidates and promote useful coverage into the permanent regression suite.</p>
         </article>
         <article>
           <h3>Specialized Agents</h3>

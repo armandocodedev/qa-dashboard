@@ -25,7 +25,7 @@
       "flaky": 0,
       "timedOut": true
     },
-    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/28668078814"
+    "sourceRunUrl": ""
   },
   {
     "id": "2026-07-02t14-41-47-555z-daily-shopify-links-boundaries",
@@ -53,7 +53,7 @@
       "flaky": 0,
       "timedOut": false
     },
-    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/28668078814"
+    "sourceRunUrl": ""
   },
   {
     "id": "2026-07-01t15-21-13-878z-daily-shopify-cart",
@@ -81,6 +81,6 @@
       "flaky": 0,
       "timedOut": true
     },
-    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/28668078814"
+    "sourceRunUrl": ""
   }
 ]

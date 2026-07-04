@@ -1,0 +1,26 @@
+[
+  {
+    "id": "saucedemo",
+    "name": "SauceDemo",
+    "url": "https://www.saucedemo.com/",
+    "image": "assets/apps/saucedemo.png",
+    "description": "Authentication, inventory, product detail, cart, and safe checkout regression flows.",
+    "flows": ["Login", "Inventory", "Products", "Cart", "Checkout"]
+  },
+  {
+    "id": "sauce-shopify",
+    "name": "Sauce Shopify",
+    "url": "https://sauce-demo.myshopify.com/",
+    "image": "assets/apps/sauce-shopify.png",
+    "description": "Catalog content, product availability, cart persistence, navigation, and external-link boundaries.",
+    "flows": ["Homepage", "Catalog", "Products", "Cart", "Links"]
+  },
+  {
+    "id": "automation-exercise",
+    "name": "Automation Exercise",
+    "url": "https://automationexercise.com/",
+    "image": "assets/apps/automation-exercise.png",
+    "description": "A richer ecommerce practice application covering product discovery, search, navigation, forms, and APIs.",
+    "flows": ["Products", "Search", "Details", "Contact", "Test cases"]
+  }
+]

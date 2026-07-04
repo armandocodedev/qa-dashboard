@@ -54,13 +54,16 @@ function initAnalyticsConsent() {
 
 async function initLiveDashboard() {
   try {
-    const response = await fetch(`data/runs.json?updated=${Date.now()}`, { cache: 'no-store' });
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const cacheKey = Date.now();
+    const [runResponse, appResponse] = await Promise.all([
+      fetch(`data/runs.json?updated=${cacheKey}`, { cache: 'no-store' }),
+      fetch(`data/apps.json?updated=${cacheKey}`, { cache: 'no-store' })
+    ]);
+    if (!runResponse.ok || !appResponse.ok) throw new Error(`HTTP ${runResponse.status}/${appResponse.status}`);
 
-    const records = await response.json();
-    if (!Array.isArray(records) || records.length === 0) return;
-
-    renderLiveDashboard(records);
+    const [records, apps] = await Promise.all([runResponse.json(), appResponse.json()]);
+    renderApplications(Array.isArray(apps) ? apps : [], Array.isArray(records) ? records : []);
+    if (Array.isArray(records) && records.length) renderLiveDashboard(records);
   } catch (error) {
     const updated = document.querySelector('#live-runs-updated');
     if (updated) updated.textContent = 'Live telemetry is temporarily unavailable.';
@@ -113,8 +116,9 @@ function renderRunCard(record) {
   const duration = Math.max(0, Math.round(numberValue(record.durationMs) / 1000));
   const host = safeHost(record.url);
   const sourceLink = record.sourceRunUrl
-    ? `<a class="run-link" href="${escapeHtml(record.sourceRunUrl)}" rel="noreferrer">Source GitHub run</a>`
+    ? `<a class="run-link" href="${escapeHtml(record.sourceRunUrl)}" target="_blank" rel="noreferrer">Open public GitHub run</a>`
     : '';
+  const runType = ['generated', 'committed', 'repair'].includes(record.runType) ? record.runType : 'generated';
 
   return `<article class="run-card ${status}">
     <div class="run-topline">
@@ -122,7 +126,7 @@ function renderRunCard(record) {
       <span>${escapeHtml(formatDate(record.startedAt))}</span>
     </div>
     <h3>${escapeHtml(record.suiteName || host || 'Agent run')}</h3>
-    <p>${escapeHtml(host || record.url || 'Public demo target')}</p>
+    <p>${escapeHtml(record.appName || host || record.url || 'Public demo target')} · ${escapeHtml(runType)}</p>
     <div class="run-meta">
       <span>${passed} passed / ${failed} failed</span>
       <span>${numberValue(record.generatedTests)} generated</span>
@@ -131,6 +135,48 @@ function renderRunCard(record) {
     </div>
     ${sourceLink}
   </article>`;
+}
+
+function renderApplications(apps, records) {
+  const list = document.querySelector('#app-list');
+  if (!list) return;
+
+  list.innerHTML = apps.map(app => {
+    const appRuns = records
+      .filter(record => record.appId === app.id || (!record.appId && safeHost(record.url) === safeHost(app.url)))
+      .sort((a, b) => String(b.startedAt).localeCompare(String(a.startedAt)));
+    const latest = appRuns[0];
+    const status = latest?.status || 'generated';
+    const committedTests = appRuns
+      .filter(record => record.runType === 'committed')
+      .reduce((max, record) => Math.max(max, numberValue(record.testSummary?.passed) + numberValue(record.testSummary?.failed)), 0);
+    const generatedTests = appRuns.reduce((total, record) => total + numberValue(record.generatedTests), 0);
+    const latestAgent = appRuns.find(record => record.runType === 'generated' || !record.runType);
+    const flowTags = (app.flows || []).map(flow => `<span>${escapeHtml(flow)}</span>`).join('');
+    const latestText = latest ? relativeTime(latest.finishedAt || latest.startedAt) : 'Awaiting first run';
+    const agentText = latestAgent ? relativeTime(latestAgent.finishedAt || latestAgent.startedAt) : 'No agent run yet';
+
+    return `<article class="app-card">
+      <a class="app-image-link" href="${escapeHtml(app.url)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeHtml(app.name)}">
+        <img class="app-image" src="${escapeHtml(app.image)}" alt="${escapeHtml(app.name)} main screen">
+      </a>
+      <div class="app-content">
+        <div class="card-topline">
+          <span class="badge ${escapeHtml(status)}">${escapeHtml(latest ? status : 'tracked')}</span>
+          <span>${appRuns.length} run${appRuns.length === 1 ? '' : 's'} / 30d</span>
+        </div>
+        <h3>${escapeHtml(app.name)}</h3>
+        <p>${escapeHtml(app.description)}</p>
+        <div class="flow-tags">${flowTags}</div>
+        <dl class="app-stats">
+          <div><dt>Permanent tests</dt><dd>${committedTests || 'Publishing next run'}</dd></div>
+          <div><dt>Agent candidates</dt><dd>${generatedTests}</dd></div>
+          <div><dt>Latest result</dt><dd>${escapeHtml(latestText)}</dd></div>
+          <div><dt>Latest agent work</dt><dd>${escapeHtml(agentText)}</dd></div>
+        </dl>
+      </div>
+    </article>`;
+  }).join('');
 }
 
 function renderTrend(chartSelector, labelSelector, points, suffix, colorClass) {
