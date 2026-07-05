@@ -1,5 +1,36 @@
 [
   {
+    "id": "2026-07-05t14-18-06-711z-daily-saucedemo-smoke",
+    "appId": "saucedemo",
+    "appName": "SauceDemo",
+    "runType": "generated",
+    "url": "https://www.saucedemo.com/",
+    "suiteName": "daily-saucedemo-smoke",
+    "model": "gpt-5",
+    "status": "passed",
+    "startedAt": "2026-07-05T14:18:06.711Z",
+    "finishedAt": "2026-07-05T14:20:38.199Z",
+    "durationMs": 151488,
+    "repairsApplied": 1,
+    "generatedTests": 4,
+    "generatedAssertions": 34,
+    "exploredSteps": 5,
+    "discovered": {
+      "links": 0,
+      "forms": 1,
+      "buttons": 1,
+      "headings": 0
+    },
+    "testSummary": {
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "timedOut": false
+    },
+    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/28743710382"
+  },
+  {
     "id": "20260705131752-saucedemo-committed",
     "appId": "saucedemo",
     "appName": "SauceDemo",
