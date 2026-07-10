@@ -1,5 +1,36 @@
 [
   {
+    "id": "2026-07-10t15-14-10-713z-daily-automation-exercise-products",
+    "appId": "automation-exercise",
+    "appName": "Automation Exercise",
+    "runType": "generated",
+    "url": "https://automationexercise.com/",
+    "suiteName": "daily-automation-exercise-products",
+    "model": "gpt-5",
+    "status": "failed",
+    "startedAt": "2026-07-10T15:14:10.713Z",
+    "finishedAt": "2026-07-10T15:18:21.674Z",
+    "durationMs": 250961,
+    "repairsApplied": 1,
+    "generatedTests": 6,
+    "generatedAssertions": 27,
+    "exploredSteps": 5,
+    "discovered": {
+      "links": 58,
+      "forms": 1,
+      "buttons": 3,
+      "headings": 78
+    },
+    "testSummary": {
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "timedOut": false
+    },
+    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/29102854229"
+  },
+  {
     "id": "20260710140730-saucedemo-committed",
     "appId": "saucedemo",
     "appName": "SauceDemo",
