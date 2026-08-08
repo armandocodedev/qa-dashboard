@@ -45,20 +45,20 @@
   <main>
     <section class="metrics" aria-label="Project metrics">
       <article>
-        <strong id="metric-generated-tests">16</strong>
-        <span>Tests generated / 30d</span>
+        <strong id="metric-functional-coverage">43.9%</strong>
+        <span>Functional coverage</span>
       </article>
       <article>
-        <strong id="metric-generated-assertions">93</strong>
-        <span>Assertions / 30d</span>
+        <strong id="metric-covered-scenarios">15/29</strong>
+        <span>Scenarios covered</span>
       </article>
       <article>
-        <strong id="metric-repairs">0</strong>
-        <span>Auto repairs / 30d</span>
+        <strong id="metric-stable-projects">2/3</strong>
+        <span>Stable projects</span>
       </article>
       <article>
-        <strong id="metric-flaky">0</strong>
-        <span>Flaky signals / 30d</span>
+        <strong id="metric-done">No</strong>
+        <span>Completion status</span>
       </article>
     </section>
 
@@ -68,15 +68,15 @@
           <p class="eyebrow">Agent telemetry</p>
           <h2>Autonomy Trends</h2>
         </div>
-        <p class="section-note">Generated candidates and saved run history across every registered application extend these charts over time.</p>
+        <p class="section-note">Promoted scenario evidence and recent committed runs extend these charts over time.</p>
       </div>
       <div class="chart-grid" aria-label="Agentic testing trend charts">
         <article class="chart-card">
           <div class="chart-topline">
-            <span>Coverage growth</span>
-            <strong id="trend-coverage-label">1 -> 16</strong>
+            <span>Functional coverage</span>
+            <strong id="trend-coverage-label">43.9%</strong>
           </div>
-          <svg class="trend-chart" id="trend-coverage-chart" viewBox="0 0 520 180" role="img" aria-label="Coverage growth from one saved generated test to sixteen generated tests">
+          <svg class="trend-chart" id="trend-coverage-chart" viewBox="0 0 520 180" role="img" aria-label="Weighted functional coverage backed by promoted test evidence">
             <line class="chart-grid-line" x1="28" y1="32" x2="492" y2="32"></line>
             <line class="chart-grid-line" x1="28" y1="88" x2="492" y2="88"></line>
             <line class="chart-grid-line" x1="28" y1="144" x2="492" y2="144"></line>
@@ -89,17 +89,17 @@
             <circle cx="492" cy="25" r="5"></circle>
           </svg>
           <div class="chart-footer">
-            <span>Saved run</span>
-            <span>Generated inventory</span>
+            <span>Promoted evidence</span>
+            <span>Weighted scenarios</span>
           </div>
         </article>
 
         <article class="chart-card">
           <div class="chart-topline">
-            <span>Autonomous repairs</span>
-            <strong id="trend-repairs-label">0 applied</strong>
+            <span>Repair effectiveness</span>
+            <strong id="trend-repairs-label">0%</strong>
           </div>
-          <svg class="trend-chart" id="trend-repairs-chart" viewBox="0 0 520 180" role="img" aria-label="Autonomous repairs currently at zero applied repairs">
+          <svg class="trend-chart" id="trend-repairs-chart" viewBox="0 0 520 180" role="img" aria-label="Percentage of repaired runs that subsequently passed">
             <line class="chart-grid-line" x1="28" y1="32" x2="492" y2="32"></line>
             <line class="chart-grid-line" x1="28" y1="88" x2="492" y2="88"></line>
             <line class="chart-grid-line" x1="28" y1="144" x2="492" y2="144"></line>
@@ -111,17 +111,17 @@
             <circle cx="492" cy="144" r="5"></circle>
           </svg>
           <div class="chart-footer">
-            <span>Repair loop enabled</span>
-            <span>No repair needed yet</span>
+            <span>Repaired candidates</span>
+            <span>Passing outcome</span>
           </div>
         </article>
 
         <article class="chart-card">
           <div class="chart-topline">
-            <span>Flakiness signals</span>
-            <strong id="trend-flaky-label">0 flaky</strong>
+            <span>Flakiness rate</span>
+            <strong id="trend-flaky-label">0%</strong>
           </div>
-          <svg class="trend-chart" id="trend-flaky-chart" viewBox="0 0 520 180" role="img" aria-label="Flakiness signals currently at zero flaky tests">
+          <svg class="trend-chart" id="trend-flaky-chart" viewBox="0 0 520 180" role="img" aria-label="Flaky test rate across the ten most recent runs">
             <line class="chart-grid-line" x1="28" y1="32" x2="492" y2="32"></line>
             <line class="chart-grid-line" x1="28" y1="88" x2="492" y2="88"></line>
             <line class="chart-grid-line" x1="28" y1="144" x2="492" y2="144"></line>
@@ -133,8 +133,8 @@
             <circle cx="492" cy="144" r="5"></circle>
           </svg>
           <div class="chart-footer">
-            <span>Tracked by Playwright</span>
-            <span>No flaky signal yet</span>
+            <span>Rolling ten runs</span>
+            <span>Lower is healthier</span>
           </div>
         </article>
       </div>

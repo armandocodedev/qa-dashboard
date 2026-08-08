@@ -1,0 +1,560 @@
+{
+  "schemaVersion": 1,
+  "catalogVersion": 1,
+  "generatedAt": "2026-08-08T04:00:42.228Z",
+  "definition": "Weighted functional scenarios backed by registered Playwright evidence. Test and assertion counts do not affect coverage.",
+  "doneCriteria": {
+    "requiredPriorities": [
+      "critical",
+      "important"
+    ],
+    "minimumRecentRuns": 5,
+    "minimumPassRate": 0.95,
+    "maximumFlakyRate": 0.02,
+    "maximumTimedOutRuns": 0
+  },
+  "overall": {
+    "done": false,
+    "projectsDone": 0,
+    "totalProjects": 3,
+    "coveredScenarios": 15,
+    "totalScenarios": 29,
+    "weightedPercent": 43.9,
+    "stableProjects": 2,
+    "requiredPriorities": [
+      "critical",
+      "important"
+    ]
+  },
+  "projects": [
+    {
+      "appId": "saucedemo",
+      "appName": "SauceDemo",
+      "coverage": {
+        "coveredScenarios": 6,
+        "totalScenarios": 10,
+        "weightedPercent": 55,
+        "coveredWeight": 22,
+        "totalWeight": 40,
+        "priorities": {
+          "critical": {
+            "covered": 3,
+            "total": 6,
+            "percent": 50
+          },
+          "important": {
+            "covered": 2,
+            "total": 3,
+            "percent": 66.7
+          },
+          "optional": {
+            "covered": 1,
+            "total": 1,
+            "percent": 100
+          }
+        }
+      },
+      "stability": {
+        "stable": true,
+        "recentRuns": 5,
+        "requiredRuns": 5,
+        "passedTests": 30,
+        "failedTests": 0,
+        "flakyTests": 0,
+        "timedOutRuns": 0,
+        "passRate": 1,
+        "flakyRate": 0,
+        "lastRunAt": "2026-08-07T12:46:47.022Z"
+      },
+      "done": false,
+      "blockers": [
+        "Uncovered critical scenario: Invalid login is rejected",
+        "Uncovered important scenario: Inventory sorting",
+        "Uncovered critical scenario: Checkout field validation",
+        "Uncovered critical scenario: Logout and session protection"
+      ],
+      "scenarios": [
+        {
+          "id": "login-form-available",
+          "name": "Login form is available",
+          "priority": "important",
+          "weight": 3,
+          "expectedOutcome": "The login page exposes usable username, password, and submit controls.",
+          "status": "covered",
+          "evidence": [
+            {
+              "spec": "generated-tests/saucedemo-login.spec.js",
+              "test": "loads login page and shows login form controls",
+              "source": "catalog"
+            }
+          ]
+        },
+        {
+          "id": "valid-login",
+          "name": "Valid customer login",
+          "priority": "critical",
+          "weight": 5,
+          "expectedOutcome": "Published demo credentials open the inventory and show products.",
+          "status": "covered",
+          "evidence": [
+            {
+              "spec": "generated-tests/saucedemo-login.spec.js",
+              "test": "successful login shows inventory page and products",
+              "source": "catalog"
+            }
+          ]
+        },
+        {
+          "id": "invalid-login",
+          "name": "Invalid login is rejected",
+          "priority": "critical",
+          "weight": 5,
+          "expectedOutcome": "Invalid credentials keep the customer signed out and show a useful error.",
+          "status": "uncovered",
+          "evidence": []
+        },
+        {
+          "id": "product-detail-navigation",
+          "name": "Product detail navigation",
+          "priority": "important",
+          "weight": 3,
+          "expectedOutcome": "A customer can open a product, verify its details, and return to inventory.",
+          "status": "covered",
+          "evidence": [
+            {
+              "spec": "generated-tests/saucedemo-login.spec.js",
+              "test": "navigate to a product detail and back to inventory",
+              "source": "catalog"
+            }
+          ]
+        },
+        {
+          "id": "inventory-sorting",
+          "name": "Inventory sorting",
+          "priority": "important",
+          "weight": 3,
+          "expectedOutcome": "Changing the sort option produces the expected product order.",
+          "status": "uncovered",
+          "evidence": []
+        },
+        {
+          "id": "cart-state",
+          "name": "Cart add, remove, and persistence",
+          "priority": "critical",
+          "weight": 5,
+          "expectedOutcome": "Added products persist in the cart and removal updates its contents and count.",
+          "status": "covered",
+          "evidence": [
+            {
+              "spec": "generated-tests/saucedemo-checkout.spec.js",
+              "test": "completes a checkout flow: login, add items, modify cart, checkout, finish, and return home",
+              "source": "catalog"
+            }
+          ]
+        },
+        {
+          "id": "successful-checkout",
+          "name": "Successful checkout",
+          "priority": "critical",
+          "weight": 5,
+          "expectedOutcome": "A valid order shows the correct item total, completes, and resets the cart.",
+          "status": "covered",
+          "evidence": [
+            {
+              "spec": "generated-tests/saucedemo-checkout.spec.js",
+              "test": "completes a checkout flow: login, add items, modify cart, checkout, finish, and return home",
+              "source": "catalog"
+            }
+          ]
+        },
+        {
+          "id": "checkout-validation",
+          "name": "Checkout field validation",
+          "priority": "critical",
+          "weight": 5,
+          "expectedOutcome": "Missing or invalid customer information prevents checkout and explains the problem.",
+          "status": "uncovered",
+          "evidence": []
+        },
+        {
+          "id": "logout-session",
+          "name": "Logout and session protection",
+          "priority": "critical",
+          "weight": 5,
+          "expectedOutcome": "Logout ends the session and protected inventory cannot be reopened without login.",
+          "status": "uncovered",
+          "evidence": []
+        },
+        {
+          "id": "footer-destinations",
+          "name": "Footer destinations",
+          "priority": "optional",
+          "weight": 1,
+          "expectedOutcome": "Published social destinations retain their expected safe href values.",
+          "status": "covered",
+          "evidence": [
+            {
+              "spec": "generated-tests/saucedemo-checkout.spec.js",
+              "test": "inventory footer links have expected hrefs (no navigation)",
+              "source": "catalog"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "appId": "sauce-shopify",
+      "appName": "Sauce Shopify",
+      "coverage": {
+        "coveredScenarios": 4,
+        "totalScenarios": 8,
+        "weightedPercent": 42.9,
+        "coveredWeight": 12,
+        "totalWeight": 28,
+        "priorities": {
+          "critical": {
+            "covered": 1,
+            "total": 3,
+            "percent": 33.3
+          },
+          "important": {
+            "covered": 2,
+            "total": 4,
+            "percent": 50
+          },
+          "optional": {
+            "covered": 1,
+            "total": 1,
+            "percent": 100
+          }
+        }
+      },
+      "stability": {
+        "stable": false,
+        "recentRuns": 5,
+        "requiredRuns": 5,
+        "passedTests": 11,
+        "failedTests": 4,
+        "flakyTests": 0,
+        "timedOutRuns": 2,
+        "passRate": 0.733,
+        "flakyRate": 0,
+        "lastRunAt": "2026-08-07T12:46:47.022Z"
+      },
+      "done": false,
+      "blockers": [
+        "Uncovered critical scenario: Cart quantity, removal, and totals",
+        "Uncovered important scenario: Product search outcomes",
+        "Uncovered important scenario: Availability and variant behavior",
+        "Uncovered critical scenario: Safe checkout entry",
+        "Pass rate 73.3% is below 95%",
+        "2 recent committed runs timed out"
+      ],
+      "scenarios": [
+        {
+          "id": "storefront-discovery",
+          "name": "Storefront and catalog discovery",
+          "priority": "important",
+          "weight": 3,
+          "expectedOutcome": "The storefront exposes navigation, catalog entry points, cart, and featured products.",
+          "status": "covered",
+          "evidence": [
+            {
+              "spec": "generated-tests/sauce-shopify-safe-cart.spec.js",
+              "test": "Home page loads with key navigation and featured products",
+              "source": "catalog"
+            }
+          ]
+        },
+        {
+          "id": "product-details",
+          "name": "Product details and variants",
+          "priority": "important",
+          "weight": 3,
+          "expectedOutcome": "Product pages show identity, pricing, available variants, and an actionable cart control.",
+          "status": "covered",
+          "evidence": [
+            {
+              "spec": "generated-tests/sauce-shopify-safe-cart.spec.js",
+              "test": "Browse product, add to cart safely, verify cart, continue shopping, and return home",
+              "source": "catalog"
+            }
+          ]
+        },
+        {
+          "id": "cart-persistence",
+          "name": "Cart persistence across navigation",
+          "priority": "critical",
+          "weight": 5,
+          "expectedOutcome": "An added product remains in the cart while browsing the catalog and returning home.",
+          "status": "covered",
+          "evidence": [
+            {
+              "spec": "generated-tests/sauce-shopify-safe-cart.spec.js",
+              "test": "Browse product, add to cart safely, verify cart, continue shopping, and return home",
+              "source": "catalog"
+            }
+          ]
+        },
+        {
+          "id": "cart-management",
+          "name": "Cart quantity, removal, and totals",
+          "priority": "critical",
+          "weight": 5,
+          "expectedOutcome": "Changing quantity or removing products updates cart contents and totals correctly.",
+          "status": "uncovered",
+          "evidence": []
+        },
+        {
+          "id": "product-search",
+          "name": "Product search outcomes",
+          "priority": "important",
+          "weight": 3,
+          "expectedOutcome": "Search returns matching products and handles a no-results query clearly.",
+          "status": "uncovered",
+          "evidence": []
+        },
+        {
+          "id": "availability-variants",
+          "name": "Availability and variant behavior",
+          "priority": "important",
+          "weight": 3,
+          "expectedOutcome": "Available variants can be selected and unavailable choices cannot be added.",
+          "status": "uncovered",
+          "evidence": []
+        },
+        {
+          "id": "checkout-entry",
+          "name": "Safe checkout entry",
+          "priority": "critical",
+          "weight": 5,
+          "expectedOutcome": "A populated cart exposes a working checkout entry without placing a real order.",
+          "status": "uncovered",
+          "evidence": []
+        },
+        {
+          "id": "published-destinations",
+          "name": "Published internal and external destinations",
+          "priority": "optional",
+          "weight": 1,
+          "expectedOutcome": "About and attribution links retain their intended href values.",
+          "status": "covered",
+          "evidence": [
+            {
+              "spec": "generated-tests/sauce-shopify-safe-cart.spec.js",
+              "test": "Footer and external links have correct hrefs without navigating externally",
+              "source": "catalog"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "appId": "automation-exercise",
+      "appName": "Automation Exercise",
+      "coverage": {
+        "coveredScenarios": 5,
+        "totalScenarios": 11,
+        "weightedPercent": 33.3,
+        "coveredWeight": 13,
+        "totalWeight": 39,
+        "priorities": {
+          "critical": {
+            "covered": 0,
+            "total": 4,
+            "percent": 0
+          },
+          "important": {
+            "covered": 4,
+            "total": 6,
+            "percent": 66.7
+          },
+          "optional": {
+            "covered": 1,
+            "total": 1,
+            "percent": 100
+          }
+        }
+      },
+      "stability": {
+        "stable": true,
+        "recentRuns": 5,
+        "requiredRuns": 5,
+        "passedTests": 15,
+        "failedTests": 0,
+        "flakyTests": 0,
+        "timedOutRuns": 0,
+        "passRate": 1,
+        "flakyRate": 0,
+        "lastRunAt": "2026-08-07T12:46:47.022Z"
+      },
+      "done": false,
+      "blockers": [
+        "Uncovered critical scenario: Account registration",
+        "Uncovered critical scenario: Login, invalid login, and logout",
+        "Uncovered critical scenario: Cart add, quantity, and removal",
+        "Uncovered critical scenario: Checkout journey",
+        "Uncovered important scenario: Category and brand filtering",
+        "Uncovered important scenario: Contact form behavior"
+      ],
+      "scenarios": [
+        {
+          "id": "storefront-navigation",
+          "name": "Storefront navigation",
+          "priority": "important",
+          "weight": 3,
+          "expectedOutcome": "The home page exposes products, cart, authentication, and featured items.",
+          "status": "covered",
+          "evidence": [
+            {
+              "spec": "generated-tests/automation-exercise.spec.js",
+              "test": "loads the storefront with primary navigation and featured products",
+              "source": "catalog"
+            }
+          ]
+        },
+        {
+          "id": "catalog-browsing",
+          "name": "Catalog browsing",
+          "priority": "important",
+          "weight": 3,
+          "expectedOutcome": "The products catalog loads and exposes browsable product results.",
+          "status": "covered",
+          "evidence": [
+            {
+              "spec": "generated-tests/automation-exercise.spec.js",
+              "test": "searches the product catalog and opens a product detail",
+              "source": "catalog"
+            }
+          ]
+        },
+        {
+          "id": "product-search",
+          "name": "Product search",
+          "priority": "important",
+          "weight": 3,
+          "expectedOutcome": "A product query returns the expected matching result.",
+          "status": "covered",
+          "evidence": [
+            {
+              "spec": "generated-tests/automation-exercise.spec.js",
+              "test": "searches the product catalog and opens a product detail",
+              "source": "catalog"
+            }
+          ]
+        },
+        {
+          "id": "product-details",
+          "name": "Product detail",
+          "priority": "important",
+          "weight": 3,
+          "expectedOutcome": "A product result opens a detail page with identity and availability information.",
+          "status": "covered",
+          "evidence": [
+            {
+              "spec": "generated-tests/automation-exercise.spec.js",
+              "test": "searches the product catalog and opens a product detail",
+              "source": "catalog"
+            }
+          ]
+        },
+        {
+          "id": "account-registration",
+          "name": "Account registration",
+          "priority": "critical",
+          "weight": 5,
+          "expectedOutcome": "A new customer can complete the safe registration flow and receive confirmation.",
+          "status": "uncovered",
+          "evidence": []
+        },
+        {
+          "id": "login-lifecycle",
+          "name": "Login, invalid login, and logout",
+          "priority": "critical",
+          "weight": 5,
+          "expectedOutcome": "Valid login succeeds, invalid login is rejected, and logout ends the session.",
+          "status": "uncovered",
+          "evidence": []
+        },
+        {
+          "id": "cart-management",
+          "name": "Cart add, quantity, and removal",
+          "priority": "critical",
+          "weight": 5,
+          "expectedOutcome": "Products can be added, quantities are accurate, and removal updates the cart.",
+          "status": "uncovered",
+          "evidence": []
+        },
+        {
+          "id": "checkout-journey",
+          "name": "Checkout journey",
+          "priority": "critical",
+          "weight": 5,
+          "expectedOutcome": "A safe test customer can review and complete the demo checkout journey.",
+          "status": "uncovered",
+          "evidence": []
+        },
+        {
+          "id": "category-brand-filtering",
+          "name": "Category and brand filtering",
+          "priority": "important",
+          "weight": 3,
+          "expectedOutcome": "Category and brand navigation display matching products.",
+          "status": "uncovered",
+          "evidence": []
+        },
+        {
+          "id": "contact-form",
+          "name": "Contact form behavior",
+          "priority": "important",
+          "weight": 3,
+          "expectedOutcome": "The contact form validates required fields and accepts safe test input.",
+          "status": "uncovered",
+          "evidence": []
+        },
+        {
+          "id": "reference-destinations",
+          "name": "Reference destinations",
+          "priority": "optional",
+          "weight": 1,
+          "expectedOutcome": "Contact, test-case, and API reference links retain their intended destinations.",
+          "status": "covered",
+          "evidence": [
+            {
+              "spec": "generated-tests/automation-exercise.spec.js",
+              "test": "exposes safe contact and test-case destinations",
+              "source": "catalog"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "history": [
+    {
+      "generatedAt": "2026-08-08T04:00:42.228Z",
+      "catalogVersion": 1,
+      "weightedPercent": 43.9,
+      "coveredScenarios": 15,
+      "totalScenarios": 29,
+      "stableProjects": 2,
+      "projects": {
+        "saucedemo": {
+          "weightedPercent": 55,
+          "stable": true,
+          "done": false
+        },
+        "sauce-shopify": {
+          "weightedPercent": 42.9,
+          "stable": false,
+          "done": false
+        },
+        "automation-exercise": {
+          "weightedPercent": 33.3,
+          "stable": true,
+          "done": false
+        }
+      }
+    }
+  ]
+}

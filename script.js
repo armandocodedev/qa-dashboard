@@ -55,15 +55,20 @@ function initAnalyticsConsent() {
 async function initLiveDashboard() {
   try {
     const cacheKey = Date.now();
-    const [runResponse, appResponse] = await Promise.all([
+    const [runResponse, appResponse, coverageResponse] = await Promise.all([
       fetch(`data/runs.json?updated=${cacheKey}`, { cache: 'no-store' }),
-      fetch(`data/apps.json?updated=${cacheKey}`, { cache: 'no-store' })
+      fetch(`data/apps.json?updated=${cacheKey}`, { cache: 'no-store' }),
+      fetch(`data/coverage.json?updated=${cacheKey}`, { cache: 'no-store' })
     ]);
     if (!runResponse.ok || !appResponse.ok) throw new Error(`HTTP ${runResponse.status}/${appResponse.status}`);
 
-    const [records, apps] = await Promise.all([runResponse.json(), appResponse.json()]);
-    renderApplications(Array.isArray(apps) ? apps : [], Array.isArray(records) ? records : []);
-    if (Array.isArray(records) && records.length) renderLiveDashboard(records);
+    const [records, apps, coverage] = await Promise.all([
+      runResponse.json(),
+      appResponse.json(),
+      coverageResponse.ok ? coverageResponse.json() : null
+    ]);
+    renderApplications(Array.isArray(apps) ? apps : [], Array.isArray(records) ? records : [], coverage);
+    if (Array.isArray(records) && records.length) renderLiveDashboard(records, coverage);
   } catch (error) {
     const updated = document.querySelector('#live-runs-updated');
     if (updated) updated.textContent = 'Live telemetry is temporarily unavailable.';
@@ -71,21 +76,13 @@ async function initLiveDashboard() {
   }
 }
 
-function renderLiveDashboard(records) {
+function renderLiveDashboard(records, coverage) {
   const sorted = [...records].sort((a, b) => String(b.startedAt).localeCompare(String(a.startedAt)));
   const chronological = [...sorted].reverse();
-  const totals = sorted.reduce((acc, record) => {
-    acc.generatedTests += numberValue(record.generatedTests);
-    acc.generatedAssertions += numberValue(record.generatedAssertions);
-    acc.repairs += numberValue(record.repairsApplied);
-    acc.flaky += numberValue(record.testSummary?.flaky);
-    return acc;
-  }, { generatedTests: 0, generatedAssertions: 0, repairs: 0, flaky: 0 });
-
-  setText('#metric-generated-tests', totals.generatedTests);
-  setText('#metric-generated-assertions', totals.generatedAssertions);
-  setText('#metric-repairs', totals.repairs);
-  setText('#metric-flaky', totals.flaky);
+  setText('#metric-functional-coverage', `${numberValue(coverage?.overall?.weightedPercent)}%`);
+  setText('#metric-covered-scenarios', `${numberValue(coverage?.overall?.coveredScenarios)}/${numberValue(coverage?.overall?.totalScenarios)}`);
+  setText('#metric-stable-projects', `${numberValue(coverage?.overall?.stableProjects)}/${numberValue(coverage?.overall?.totalProjects)}`);
+  setText('#metric-done', coverage?.overall?.done ? 'Yes' : 'No');
 
   const latest = sorted[0];
   const passed = numberValue(latest.testSummary?.passed);
@@ -94,13 +91,13 @@ function renderLiveDashboard(records) {
   setText('#latest-status-summary', `${passed} passed, ${failed} failed. Published ${relativeTime(latest.finishedAt || latest.startedAt)}.`);
   setStatusClass(document.querySelector('#latest-status-dot'), latest.status);
 
-  const coverage = cumulativePoints(chronological, record => numberValue(record.generatedTests));
-  const repairs = cumulativePoints(chronological, record => numberValue(record.repairsApplied));
-  const flaky = cumulativePoints(chronological, record => numberValue(record.testSummary?.flaky));
+  const coveragePoints = (coverage?.history || []).map(snapshot => ({ value: numberValue(snapshot.weightedPercent) }));
+  const repairs = repairEffectivenessPoints(chronological);
+  const flaky = rollingFlakyRatePoints(chronological);
 
-  renderTrend('#trend-coverage-chart', '#trend-coverage-label', coverage, 'generated', 'coverage');
-  renderTrend('#trend-repairs-chart', '#trend-repairs-label', repairs, 'applied', 'repairs');
-  renderTrend('#trend-flaky-chart', '#trend-flaky-label', flaky, 'flaky', 'flaky');
+  renderTrend('#trend-coverage-chart', '#trend-coverage-label', coveragePoints, '%', 'coverage');
+  renderTrend('#trend-repairs-chart', '#trend-repairs-label', repairs, '%', 'repairs');
+  renderTrend('#trend-flaky-chart', '#trend-flaky-label', flaky, '%', 'flaky');
 
   const updated = document.querySelector('#live-runs-updated');
   if (updated) updated.textContent = `${sorted.length} run${sorted.length === 1 ? '' : 's'} published. Updated ${relativeTime(latest.finishedAt || latest.startedAt)}.`;
@@ -137,7 +134,7 @@ function renderRunCard(record) {
   </article>`;
 }
 
-function renderApplications(apps, records) {
+function renderApplications(apps, records, coverage) {
   const list = document.querySelector('#app-list');
   if (!list) return;
 
@@ -150,11 +147,14 @@ function renderApplications(apps, records) {
     const committedTests = appRuns
       .filter(record => record.runType === 'committed')
       .reduce((max, record) => Math.max(max, numberValue(record.testSummary?.passed) + numberValue(record.testSummary?.failed)), 0);
-    const generatedTests = appRuns.reduce((total, record) => total + numberValue(record.generatedTests), 0);
     const latestAgent = appRuns.find(record => record.runType === 'generated' || !record.runType);
     const flowTags = (app.flows || []).map(flow => `<span>${escapeHtml(flow)}</span>`).join('');
     const latestText = latest ? relativeTime(latest.finishedAt || latest.startedAt) : 'Awaiting first run';
     const agentText = latestAgent ? relativeTime(latestAgent.finishedAt || latestAgent.startedAt) : 'No agent run yet';
+    const projectCoverage = coverage?.projects?.find(project => project.appId === app.id);
+    const coverageText = projectCoverage ? `${projectCoverage.coverage.weightedPercent}%` : 'Awaiting report';
+    const stabilityText = projectCoverage?.stability?.stable ? 'Stable' : 'Not stable';
+    const doneText = projectCoverage?.done ? 'Done' : `${projectCoverage?.blockers?.length || 0} blockers`;
 
     return `<article class="app-card">
       <a class="app-image-link" href="${escapeHtml(app.url)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeHtml(app.name)}">
@@ -169,8 +169,10 @@ function renderApplications(apps, records) {
         <p>${escapeHtml(app.description)}</p>
         <div class="flow-tags">${flowTags}</div>
         <dl class="app-stats">
+          <div><dt>Functional coverage</dt><dd>${escapeHtml(coverageText)}</dd></div>
+          <div><dt>Stability</dt><dd>${escapeHtml(stabilityText)}</dd></div>
+          <div><dt>Completion</dt><dd>${escapeHtml(doneText)}</dd></div>
           <div><dt>Permanent tests</dt><dd>${committedTests || 'Publishing next run'}</dd></div>
-          <div><dt>Agent candidates</dt><dd>${generatedTests}</dd></div>
           <div><dt>Latest result</dt><dd>${escapeHtml(latestText)}</dd></div>
           <div><dt>Latest agent work</dt><dd>${escapeHtml(agentText)}</dd></div>
         </dl>
@@ -185,7 +187,7 @@ function renderTrend(chartSelector, labelSelector, points, suffix, colorClass) {
   const first = points[0]?.value ?? 0;
   const last = points.at(-1)?.value ?? 0;
 
-  if (label) label.textContent = points.length > 1 ? `${first} -> ${last}` : `${last} ${suffix}`;
+  if (label) label.textContent = points.length > 1 ? `${first}${suffix} -> ${last}${suffix}` : `${last}${suffix}`;
   if (!chart || points.length === 0) return;
 
   const width = 520;
@@ -209,11 +211,24 @@ function renderTrend(chartSelector, labelSelector, points, suffix, colorClass) {
     ${circles}`;
 }
 
-function cumulativePoints(records, valueForRecord) {
-  let total = 0;
+function repairEffectivenessPoints(records) {
+  let repaired = 0;
+  let passed = 0;
   return records.map(record => {
-    total += valueForRecord(record);
-    return { value: total };
+    if (numberValue(record.repairsApplied) > 0) {
+      repaired += 1;
+      if (record.status === 'passed') passed += 1;
+    }
+    return { value: repaired ? round((passed / repaired) * 100) : 0 };
+  });
+}
+
+function rollingFlakyRatePoints(records) {
+  return records.map((record, index) => {
+    const recent = records.slice(Math.max(0, index - 9), index + 1);
+    const executed = recent.reduce((total, item) => total + numberValue(item.testSummary?.passed) + numberValue(item.testSummary?.failed), 0);
+    const flaky = recent.reduce((total, item) => total + numberValue(item.testSummary?.flaky), 0);
+    return { value: executed ? round((flaky / executed) * 100) : 0 };
   });
 }
 
