@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "catalogVersion": 1,
-  "generatedAt": "2026-08-08T04:00:42.228Z",
+  "generatedAt": "2026-08-08T12:33:34.445Z",
   "definition": "Weighted functional scenarios backed by registered Playwright evidence. Test and assertion counts do not affect coverage.",
   "doneCriteria": {
     "requiredPriorities": [
@@ -64,7 +64,7 @@
         "timedOutRuns": 0,
         "passRate": 1,
         "flakyRate": 0,
-        "lastRunAt": "2026-08-07T12:46:47.022Z"
+        "lastRunAt": "2026-08-08T12:33:16.529Z"
       },
       "done": false,
       "blockers": [
@@ -233,13 +233,13 @@
         "stable": false,
         "recentRuns": 5,
         "requiredRuns": 5,
-        "passedTests": 11,
-        "failedTests": 4,
+        "passedTests": 13,
+        "failedTests": 2,
         "flakyTests": 0,
-        "timedOutRuns": 2,
-        "passRate": 0.733,
+        "timedOutRuns": 1,
+        "passRate": 0.867,
         "flakyRate": 0,
-        "lastRunAt": "2026-08-07T12:46:47.022Z"
+        "lastRunAt": "2026-08-08T12:33:16.529Z"
       },
       "done": false,
       "blockers": [
@@ -247,8 +247,8 @@
         "Uncovered important scenario: Product search outcomes",
         "Uncovered important scenario: Availability and variant behavior",
         "Uncovered critical scenario: Safe checkout entry",
-        "Pass rate 73.3% is below 95%",
-        "2 recent committed runs timed out"
+        "Pass rate 86.7% is below 95%",
+        "1 recent committed runs timed out"
       ],
       "scenarios": [
         {
@@ -386,7 +386,7 @@
         "timedOutRuns": 0,
         "passRate": 1,
         "flakyRate": 0,
-        "lastRunAt": "2026-08-07T12:46:47.022Z"
+        "lastRunAt": "2026-08-08T12:33:16.529Z"
       },
       "done": false,
       "blockers": [
@@ -532,7 +532,7 @@
   ],
   "history": [
     {
-      "generatedAt": "2026-08-08T04:00:42.228Z",
+      "generatedAt": "2026-08-08T12:33:34.445Z",
       "catalogVersion": 1,
       "weightedPercent": 43.9,
       "coveredScenarios": 15,
