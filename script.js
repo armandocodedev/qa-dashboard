@@ -1,5 +1,7 @@
 const GA_MEASUREMENT_ID = 'G-4DPCVB9L73';
 const ANALYTICS_CONSENT_KEY = 'qa-dashboard-analytics-consent';
+const RECENT_ACTIVITY_LIMIT = 12;
+let liveRunRecords = [];
 
 function loadGoogleAnalytics() {
   if (window.gtagLoaded) return;
@@ -67,6 +69,7 @@ async function initLiveDashboard() {
       appResponse.json(),
       coverageResponse.ok ? coverageResponse.json() : null
     ]);
+    renderCoverageMetrics(coverage);
     renderApplications(Array.isArray(apps) ? apps : [], Array.isArray(records) ? records : [], coverage);
     if (Array.isArray(records) && records.length) renderLiveDashboard(records, coverage);
   } catch (error) {
@@ -79,10 +82,7 @@ async function initLiveDashboard() {
 function renderLiveDashboard(records, coverage) {
   const sorted = [...records].sort((a, b) => String(b.startedAt).localeCompare(String(a.startedAt)));
   const chronological = [...sorted].reverse();
-  setText('#metric-functional-coverage', `${numberValue(coverage?.overall?.weightedPercent)}%`);
-  setText('#metric-covered-scenarios', `${numberValue(coverage?.overall?.coveredScenarios)}/${numberValue(coverage?.overall?.totalScenarios)}`);
-  setText('#metric-stable-projects', `${numberValue(coverage?.overall?.stableProjects)}/${numberValue(coverage?.overall?.totalProjects)}`);
-  setText('#metric-done', coverage?.overall?.done ? 'Yes' : 'No');
+  liveRunRecords = sorted;
 
   const latest = sorted[0];
   const passed = numberValue(latest.testSummary?.passed);
@@ -100,10 +100,86 @@ function renderLiveDashboard(records, coverage) {
   renderTrend('#trend-flaky-chart', '#trend-flaky-label', flaky, '%', 'flaky');
 
   const updated = document.querySelector('#live-runs-updated');
-  if (updated) updated.textContent = `${sorted.length} run${sorted.length === 1 ? '' : 's'} published. Updated ${relativeTime(latest.finishedAt || latest.startedAt)}.`;
+  if (updated) updated.textContent = `${sorted.length} published runs. Updated ${relativeTime(latest.finishedAt || latest.startedAt)}.`;
 
+  renderHealthSummary(sorted);
+  renderProjectHealth(sorted);
+  renderRecentActivity('all');
+}
+
+function renderCoverageMetrics(coverage) {
+  const container = document.querySelector('#project-coverage-metrics');
+  if (!container || !Array.isArray(coverage?.projects)) return;
+
+  container.innerHTML = coverage.projects.map(project => {
+    const covered = numberValue(project.coverage?.coveredScenarios);
+    const total = numberValue(project.coverage?.totalScenarios);
+    const stable = Boolean(project.stability?.stable);
+    const blockers = Array.isArray(project.blockers) ? project.blockers.length : 0;
+
+    return `<article class="${stable ? 'stable' : 'unstable'}">
+      <span class="metric-project">${escapeHtml(project.appName || project.appId)}</span>
+      <strong>${numberValue(project.coverage?.weightedPercent)}%</strong>
+      <span>${covered}/${total} scenarios · ${stable ? 'Stable' : 'Not stable'}</span>
+      <span class="metric-blockers">${blockers} completion blocker${blockers === 1 ? '' : 's'}</span>
+    </article>`;
+  }).join('');
+
+  setText('#coverage-portfolio-summary', `Portfolio: ${numberValue(coverage.overall?.weightedPercent)}% weighted coverage · ${numberValue(coverage.overall?.coveredScenarios)}/${numberValue(coverage.overall?.totalScenarios)} scenarios · ${numberValue(coverage.overall?.stableProjects)}/${numberValue(coverage.overall?.totalProjects)} projects stable`);
+}
+
+function renderHealthSummary(records) {
+  const committed = records.filter(record => record.runType === 'committed');
+  const generated = records.filter(record => record.runType === 'generated');
+  const repaired = records.filter(record => numberValue(record.repairsApplied) > 0);
+  const regression = testOutcome(committed);
+
+  setText('#health-regression-rate', formatRate(regression.passed, regression.executed));
+  setText('#health-candidate-rate', formatRate(generated.filter(record => record.status === 'passed').length, generated.length));
+  setText('#health-repair-rate', formatRate(repaired.filter(record => record.status === 'passed').length, repaired.length));
+  setText('#health-timeouts', records.filter(record => record.testSummary?.timedOut).length);
+}
+
+function renderProjectHealth(records) {
+  const body = document.querySelector('#health-projects');
+  if (!body) return;
+
+  const projects = [...new Map(records.filter(record => record.appId).map(record => [record.appId, record.appName || record.appId])).entries()];
+  body.innerHTML = projects.map(([appId, appName]) => {
+    const appRuns = records.filter(record => record.appId === appId);
+    const committed = appRuns.filter(record => record.runType === 'committed');
+    const generated = appRuns.filter(record => record.runType === 'generated');
+    const regression = testOutcome(committed);
+    const latest = appRuns[0];
+    const timeoutCount = appRuns.filter(record => record.testSummary?.timedOut).length;
+
+    return `<tr>
+      <th scope="row">${escapeHtml(appName)}</th>
+      <td><strong>${formatRate(regression.passed, regression.executed)}</strong><span>${regression.passed}/${regression.executed} tests</span></td>
+      <td><strong>${formatRate(generated.filter(record => record.status === 'passed').length, generated.length)}</strong><span>${generated.length} candidates</span></td>
+      <td><strong>${timeoutCount}</strong><span>published runs</span></td>
+      <td><span class="badge ${escapeHtml(latest?.status || 'generated')}">${escapeHtml(latest?.status || 'unknown')}</span><span>${escapeHtml(relativeTime(latest?.finishedAt || latest?.startedAt))}</span></td>
+    </tr>`;
+  }).join('') || '<tr><td colspan="5">No application-attributed runs published yet.</td></tr>';
+}
+
+function renderRecentActivity(filter) {
+  const matching = liveRunRecords.filter(record => {
+    if (filter === 'failed') return record.status === 'failed' || record.testSummary?.timedOut;
+    if (filter === 'committed') return record.runType === 'committed';
+    if (filter === 'generated') return record.runType === 'generated';
+    return true;
+  });
+  const visible = matching.slice(0, RECENT_ACTIVITY_LIMIT);
   const list = document.querySelector('#live-run-list');
-  if (list) list.innerHTML = sorted.map(renderRunCard).join('');
+  const summary = document.querySelector('#activity-summary');
+
+  if (summary) summary.textContent = `Showing ${visible.length} of ${matching.length} matching runs`;
+  if (list) {
+    list.innerHTML = visible.length
+      ? visible.map(renderRunCard).join('')
+      : '<article class="run-card empty-run"><h3>No matching runs</h3><p>Try another activity filter.</p></article>';
+  }
 }
 
 function renderRunCard(record) {
@@ -232,6 +308,16 @@ function rollingFlakyRatePoints(records) {
   });
 }
 
+function testOutcome(records) {
+  const passed = records.reduce((total, record) => total + numberValue(record.testSummary?.passed), 0);
+  const failed = records.reduce((total, record) => total + numberValue(record.testSummary?.failed), 0);
+  return { passed, failed, executed: passed + failed };
+}
+
+function formatRate(numerator, denominator) {
+  return denominator ? `${Math.round((numerator / denominator) * 1_000) / 10}%` : '--';
+}
+
 function setText(selector, value) {
   const element = document.querySelector(selector);
   if (element) element.textContent = String(value);
@@ -288,4 +374,14 @@ function escapeHtml(value) {
 document.addEventListener('DOMContentLoaded', () => {
   initAnalyticsConsent();
   initLiveDashboard();
+  document.querySelectorAll('[data-run-filter]').forEach(button => {
+    button.addEventListener('click', () => {
+      document.querySelectorAll('[data-run-filter]').forEach(candidate => {
+        const active = candidate === button;
+        candidate.classList.toggle('active', active);
+        candidate.setAttribute('aria-pressed', String(active));
+      });
+      renderRecentActivity(button.dataset.runFilter);
+    });
+  });
 });

@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260622-nav">
+  <link rel="stylesheet" href="styles.css?v=20260808-project-coverage">
 </head>
 <body>
   <header class="site-header">
@@ -43,24 +43,27 @@
   </header>
 
   <main>
-    <section class="metrics" aria-label="Project metrics">
-      <article>
-        <strong id="metric-functional-coverage">43.9%</strong>
-        <span>Functional coverage</span>
+    <section class="metrics coverage-metrics" id="project-coverage-metrics" aria-label="Functional coverage by project">
+      <article class="stable">
+        <span class="metric-project">SauceDemo</span>
+        <strong>55%</strong>
+        <span>6/10 scenarios · Stable</span>
+        <span class="metric-blockers">4 completion blockers</span>
       </article>
-      <article>
-        <strong id="metric-covered-scenarios">15/29</strong>
-        <span>Scenarios covered</span>
+      <article class="unstable">
+        <span class="metric-project">Sauce Shopify</span>
+        <strong>42.9%</strong>
+        <span>4/8 scenarios · Not stable</span>
+        <span class="metric-blockers">6 completion blockers</span>
       </article>
-      <article>
-        <strong id="metric-stable-projects">2/3</strong>
-        <span>Stable projects</span>
-      </article>
-      <article>
-        <strong id="metric-done">No</strong>
-        <span>Completion status</span>
+      <article class="stable">
+        <span class="metric-project">Automation Exercise</span>
+        <strong>33.3%</strong>
+        <span>5/11 scenarios · Stable</span>
+        <span class="metric-blockers">6 completion blockers</span>
       </article>
     </section>
+    <p class="portfolio-summary" id="coverage-portfolio-summary">Portfolio: 43.9% weighted coverage · 15/29 scenarios · 2/3 projects stable</p>
 
     <section id="trends" class="section">
       <div class="section-heading section-heading-row">
@@ -73,10 +76,10 @@
       <div class="chart-grid" aria-label="Agentic testing trend charts">
         <article class="chart-card">
           <div class="chart-topline">
-            <span>Functional coverage</span>
+            <span>Portfolio coverage</span>
             <strong id="trend-coverage-label">43.9%</strong>
           </div>
-          <svg class="trend-chart" id="trend-coverage-chart" viewBox="0 0 520 180" role="img" aria-label="Weighted functional coverage backed by promoted test evidence">
+          <svg class="trend-chart" id="trend-coverage-chart" viewBox="0 0 520 180" role="img" aria-label="Portfolio-wide weighted functional coverage backed by promoted test evidence">
             <line class="chart-grid-line" x1="28" y1="32" x2="492" y2="32"></line>
             <line class="chart-grid-line" x1="28" y1="88" x2="492" y2="88"></line>
             <line class="chart-grid-line" x1="28" y1="144" x2="492" y2="144"></line>
@@ -144,9 +147,55 @@
       <div class="section-heading section-heading-row">
         <div>
           <p class="eyebrow">Live CI telemetry</p>
-          <h2>Last 30 Days</h2>
+          <h2>30-Day QA Health</h2>
         </div>
         <p class="section-note" id="live-runs-updated">Waiting for the first published agent run.</p>
+      </div>
+      <div class="health-metrics" aria-label="Thirty-day QA health metrics">
+        <article>
+          <strong id="health-regression-rate">--</strong>
+          <span>Regression tests passing</span>
+        </article>
+        <article>
+          <strong id="health-candidate-rate">--</strong>
+          <span>Passing agent candidates</span>
+        </article>
+        <article>
+          <strong id="health-repair-rate">--</strong>
+          <span>Successful repaired runs</span>
+        </article>
+        <article>
+          <strong id="health-timeouts">--</strong>
+          <span>Runs with timeouts</span>
+        </article>
+      </div>
+      <div class="health-table-wrap" tabindex="0" aria-label="Application QA health comparison; scroll horizontally for all columns">
+        <table class="health-table">
+          <thead>
+            <tr>
+              <th scope="col">Application</th>
+              <th scope="col">Regression reliability</th>
+              <th scope="col">Candidate success</th>
+              <th scope="col">Timeouts</th>
+              <th scope="col">Latest result</th>
+            </tr>
+          </thead>
+          <tbody id="health-projects">
+            <tr><td colspan="5">Waiting for published run data.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="activity-heading">
+        <div>
+          <h3>Recent Activity</h3>
+          <p id="activity-summary">Latest published runs</p>
+        </div>
+        <div class="segmented-control" role="group" aria-label="Filter recent activity">
+          <button type="button" class="active" data-run-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-run-filter="failed" aria-pressed="false">Failures</button>
+          <button type="button" data-run-filter="committed" aria-pressed="false">Regressions</button>
+          <button type="button" data-run-filter="generated" aria-pressed="false">Candidates</button>
+        </div>
       </div>
       <div class="run-grid" id="live-run-list" aria-live="polite">
         <article class="run-card empty-run">
@@ -220,6 +269,6 @@
       <button class="cookie-button primary" type="button" data-cookie-choice="accepted">Accept analytics</button>
     </div>
   </div>
-  <script src="script.js"></script>
+  <script src="script.js?v=20260808-project-coverage"></script>
 </body>
 </html>
