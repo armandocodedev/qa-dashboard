@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "catalogVersion": 1,
-  "generatedAt": "2026-08-10T12:53:58.043Z",
+  "generatedAt": "2026-08-10T14:08:47.598Z",
   "definition": "Weighted functional scenarios backed by registered Playwright evidence. Test and assertion counts do not affect coverage.",
   "doneCriteria": {
     "requiredPriorities": [
@@ -599,7 +599,7 @@
       }
     },
     {
-      "generatedAt": "2026-08-10T12:53:58.043Z",
+      "generatedAt": "2026-08-10T14:08:47.598Z",
       "catalogVersion": 1,
       "weightedPercent": 60.7,
       "coveredScenarios": 19,
