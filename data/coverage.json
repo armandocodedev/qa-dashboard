@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "catalogVersion": 1,
-  "generatedAt": "2026-08-12T14:04:33.280Z",
+  "generatedAt": "2026-08-13T12:55:14.688Z",
   "definition": "Weighted functional scenarios backed by registered Playwright evidence. Test and assertion counts do not affect coverage.",
   "doneCriteria": {
     "requiredPriorities": [
@@ -58,13 +58,13 @@
         "stable": true,
         "recentRuns": 5,
         "requiredRuns": 5,
-        "passedTests": 48,
+        "passedTests": 61,
         "failedTests": 0,
         "flakyTests": 0,
         "timedOutRuns": 0,
         "passRate": 1,
         "flakyRate": 0,
-        "lastRunAt": "2026-08-12T12:53:14.267Z"
+        "lastRunAt": "2026-08-13T12:54:47.077Z"
       },
       "done": true,
       "blockers": [],
@@ -258,7 +258,7 @@
         "timedOutRuns": 0,
         "passRate": 1,
         "flakyRate": 0,
-        "lastRunAt": "2026-08-12T12:53:14.267Z"
+        "lastRunAt": "2026-08-13T12:54:47.077Z"
       },
       "done": false,
       "blockers": [
@@ -403,7 +403,7 @@
         "timedOutRuns": 0,
         "passRate": 1,
         "flakyRate": 0,
-        "lastRunAt": "2026-08-12T12:53:14.267Z"
+        "lastRunAt": "2026-08-13T12:54:47.077Z"
       },
       "done": false,
       "blockers": [
@@ -650,6 +650,31 @@
     },
     {
       "generatedAt": "2026-08-12T14:04:33.280Z",
+      "catalogVersion": 1,
+      "weightedPercent": 60.7,
+      "coveredScenarios": 19,
+      "totalScenarios": 29,
+      "stableProjects": 3,
+      "projects": {
+        "saucedemo": {
+          "weightedPercent": 100,
+          "stable": true,
+          "done": true
+        },
+        "sauce-shopify": {
+          "weightedPercent": 42.9,
+          "stable": true,
+          "done": false
+        },
+        "automation-exercise": {
+          "weightedPercent": 33.3,
+          "stable": true,
+          "done": false
+        }
+      }
+    },
+    {
+      "generatedAt": "2026-08-13T12:55:14.688Z",
       "catalogVersion": 1,
       "weightedPercent": 60.7,
       "coveredScenarios": 19,
