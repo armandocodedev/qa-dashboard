@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "catalogVersion": 1,
-  "generatedAt": "2026-08-16T13:13:18.590Z",
+  "generatedAt": "2026-08-17T12:32:02.714Z",
   "definition": "Weighted functional scenarios backed by registered Playwright evidence. Test and assertion counts do not affect coverage.",
   "doneCriteria": {
     "requiredPriorities": [
@@ -58,13 +58,13 @@
         "stable": true,
         "recentRuns": 5,
         "requiredRuns": 5,
-        "passedTests": 109,
+        "passedTests": 121,
         "failedTests": 0,
         "flakyTests": 0,
         "timedOutRuns": 0,
         "passRate": 1,
         "flakyRate": 0,
-        "lastRunAt": "2026-08-16T12:24:40.891Z"
+        "lastRunAt": "2026-08-17T12:29:48.603Z"
       },
       "done": false,
       "blockers": [
@@ -244,7 +244,7 @@
         "timedOutRuns": 0,
         "passRate": 1,
         "flakyRate": 0,
-        "lastRunAt": "2026-08-16T12:24:40.891Z"
+        "lastRunAt": "2026-08-17T12:29:48.603Z"
       },
       "done": false,
       "blockers": [
@@ -384,12 +384,12 @@
         "recentRuns": 5,
         "requiredRuns": 5,
         "passedTests": 15,
-        "failedTests": 8,
+        "failedTests": 12,
         "flakyTests": 0,
-        "timedOutRuns": 2,
-        "passRate": 0.652,
+        "timedOutRuns": 3,
+        "passRate": 0.556,
         "flakyRate": 0,
-        "lastRunAt": "2026-08-16T12:24:40.891Z"
+        "lastRunAt": "2026-08-17T12:29:48.603Z"
       },
       "done": false,
       "blockers": [
@@ -399,8 +399,8 @@
         "Uncovered critical scenario: Checkout journey",
         "Uncovered important scenario: Category and brand filtering",
         "Uncovered important scenario: Contact form behavior",
-        "Pass rate 65.2% is below 95%",
-        "2 recent committed runs timed out"
+        "Pass rate 55.6% is below 95%",
+        "3 recent committed runs timed out"
       ],
       "scenarios": [
         {
@@ -738,6 +738,31 @@
     },
     {
       "generatedAt": "2026-08-16T13:13:18.590Z",
+      "catalogVersion": 1,
+      "weightedPercent": 43.9,
+      "coveredScenarios": 15,
+      "totalScenarios": 29,
+      "stableProjects": 2,
+      "projects": {
+        "saucedemo": {
+          "weightedPercent": 55,
+          "stable": true,
+          "done": false
+        },
+        "sauce-shopify": {
+          "weightedPercent": 42.9,
+          "stable": true,
+          "done": false
+        },
+        "automation-exercise": {
+          "weightedPercent": 33.3,
+          "stable": false,
+          "done": false
+        }
+      }
+    },
+    {
+      "generatedAt": "2026-08-17T12:32:02.714Z",
       "catalogVersion": 1,
       "weightedPercent": 43.9,
       "coveredScenarios": 15,
