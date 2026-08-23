@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "catalogVersion": 1,
-  "generatedAt": "2026-08-23T12:26:17.832Z",
+  "generatedAt": "2026-08-23T13:13:22.966Z",
   "definition": "Weighted functional scenarios backed by registered Playwright evidence. Test and assertion counts do not affect coverage.",
   "doneCriteria": {
     "requiredPriorities": [
@@ -126,11 +126,6 @@
               "spec": "generated-tests/saucedemo-login.spec.js",
               "test": "navigate to a product detail and back to inventory",
               "source": "catalog"
-            },
-            {
-              "spec": "generated-tests/promoted/saucedemo/daily-saucedemo-smoke.spec.js",
-              "test": "Navigate to a product detail and back to inventory [coverage:product-detail-navigation]",
-              "source": "test-tag"
             }
           ]
         },
@@ -936,7 +931,7 @@
       }
     },
     {
-      "generatedAt": "2026-08-23T12:26:17.832Z",
+      "generatedAt": "2026-08-23T13:13:22.966Z",
       "catalogVersion": 1,
       "weightedPercent": 63.6,
       "coveredScenarios": 20,
