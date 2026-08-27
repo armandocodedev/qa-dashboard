@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "catalogVersion": 1,
-  "generatedAt": "2026-08-27T21:34:42.522Z",
+  "generatedAt": "2026-08-27T22:34:01.968Z",
   "definition": "Weighted functional scenarios backed by registered Playwright evidence. Test and assertion counts do not affect coverage.",
   "doneCriteria": {
     "requiredPriorities": [
@@ -15,11 +15,11 @@
   },
   "overall": {
     "done": false,
-    "projectsDone": 1,
+    "projectsDone": 0,
     "totalProjects": 3,
-    "coveredScenarios": 20,
+    "coveredScenarios": 16,
     "totalScenarios": 29,
-    "weightedPercent": 63.6,
+    "weightedPercent": 46.7,
     "stableProjects": 3,
     "requiredPriorities": [
       "critical",
@@ -31,21 +31,21 @@
       "appId": "saucedemo",
       "appName": "SauceDemo",
       "coverage": {
-        "coveredScenarios": 10,
+        "coveredScenarios": 6,
         "totalScenarios": 10,
-        "weightedPercent": 100,
-        "coveredWeight": 40,
+        "weightedPercent": 55,
+        "coveredWeight": 22,
         "totalWeight": 40,
         "priorities": {
           "critical": {
-            "covered": 6,
+            "covered": 3,
             "total": 6,
-            "percent": 100
+            "percent": 50
           },
           "important": {
-            "covered": 3,
+            "covered": 2,
             "total": 3,
-            "percent": 100
+            "percent": 66.7
           },
           "optional": {
             "covered": 1,
@@ -66,8 +66,13 @@
         "flakyRate": 0,
         "lastRunAt": "2026-08-27T21:33:47.105Z"
       },
-      "done": true,
-      "blockers": [],
+      "done": false,
+      "blockers": [
+        "Uncovered critical scenario: Invalid login is rejected",
+        "Uncovered important scenario: Inventory sorting",
+        "Uncovered critical scenario: Checkout field validation",
+        "Uncovered critical scenario: Logout and session protection"
+      ],
       "scenarios": [
         {
           "id": "login-form-available",
@@ -105,14 +110,8 @@
           "priority": "critical",
           "weight": 5,
           "expectedOutcome": "Invalid credentials keep the customer signed out and show a useful error.",
-          "status": "covered",
-          "evidence": [
-            {
-              "spec": "generated-tests/promoted/saucedemo/daily-saucedemo-login.spec.js",
-              "test": "rejects invalid login and shows error [coverage:invalid-login]",
-              "source": "test-tag"
-            }
-          ]
+          "status": "uncovered",
+          "evidence": []
         },
         {
           "id": "product-detail-navigation",
@@ -135,14 +134,8 @@
           "priority": "important",
           "weight": 3,
           "expectedOutcome": "Changing the sort option produces the expected product order.",
-          "status": "covered",
-          "evidence": [
-            {
-              "spec": "generated-tests/promoted/saucedemo/daily-saucedemo-login.spec.js",
-              "test": "inventory can be sorted by price ascending and descending [coverage:inventory-sorting]",
-              "source": "test-tag"
-            }
-          ]
+          "status": "uncovered",
+          "evidence": []
         },
         {
           "id": "cart-state",
@@ -180,14 +173,8 @@
           "priority": "critical",
           "weight": 5,
           "expectedOutcome": "Missing or invalid customer information prevents checkout and explains the problem.",
-          "status": "covered",
-          "evidence": [
-            {
-              "spec": "generated-tests/promoted/saucedemo/daily-saucedemo-login.spec.js",
-              "test": "checkout form validation prevents continuation and explains problem [coverage:checkout-validation]",
-              "source": "test-tag"
-            }
-          ]
+          "status": "uncovered",
+          "evidence": []
         },
         {
           "id": "logout-session",
@@ -195,14 +182,8 @@
           "priority": "critical",
           "weight": 5,
           "expectedOutcome": "Logout ends the session and protected inventory cannot be reopened without login.",
-          "status": "covered",
-          "evidence": [
-            {
-              "spec": "generated-tests/promoted/saucedemo/daily-saucedemo-login.spec.js",
-              "test": "logout ends the session and protects inventory [coverage:logout-session]",
-              "source": "test-tag"
-            }
-          ]
+          "status": "uncovered",
+          "evidence": []
         },
         {
           "id": "footer-destinations",
@@ -1029,17 +1010,17 @@
       }
     },
     {
-      "generatedAt": "2026-08-27T21:34:42.522Z",
+      "generatedAt": "2026-08-27T22:34:01.968Z",
       "catalogVersion": 1,
-      "weightedPercent": 63.6,
-      "coveredScenarios": 20,
+      "weightedPercent": 46.7,
+      "coveredScenarios": 16,
       "totalScenarios": 29,
       "stableProjects": 3,
       "projects": {
         "saucedemo": {
-          "weightedPercent": 100,
+          "weightedPercent": 55,
           "stable": true,
-          "done": true
+          "done": false
         },
         "sauce-shopify": {
           "weightedPercent": 42.9,
