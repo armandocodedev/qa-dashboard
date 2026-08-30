@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "catalogVersion": 1,
-  "generatedAt": "2026-08-29T16:56:03.397Z",
+  "generatedAt": "2026-08-30T15:51:52.369Z",
   "definition": "Weighted functional scenarios backed by registered Playwright evidence. Test and assertion counts do not affect coverage.",
   "doneCriteria": {
     "requiredPriorities": [
@@ -20,7 +20,7 @@
     "coveredScenarios": 16,
     "totalScenarios": 29,
     "weightedPercent": 46.7,
-    "stableProjects": 3,
+    "stableProjects": 2,
     "requiredPriorities": [
       "critical",
       "important"
@@ -58,13 +58,13 @@
         "stable": true,
         "recentRuns": 5,
         "requiredRuns": 5,
-        "passedTests": 107,
+        "passedTests": 104,
         "failedTests": 0,
         "flakyTests": 0,
         "timedOutRuns": 0,
         "passRate": 1,
         "flakyRate": 0,
-        "lastRunAt": "2026-08-29T16:01:58.322Z"
+        "lastRunAt": "2026-08-30T15:50:47.325Z"
       },
       "done": false,
       "blockers": [
@@ -239,7 +239,7 @@
         "timedOutRuns": 0,
         "passRate": 1,
         "flakyRate": 0,
-        "lastRunAt": "2026-08-29T16:01:58.322Z"
+        "lastRunAt": "2026-08-30T15:50:47.325Z"
       },
       "done": false,
       "blockers": [
@@ -375,16 +375,16 @@
         }
       },
       "stability": {
-        "stable": true,
+        "stable": false,
         "recentRuns": 5,
         "requiredRuns": 5,
-        "passedTests": 15,
-        "failedTests": 0,
+        "passedTests": 12,
+        "failedTests": 3,
         "flakyTests": 0,
         "timedOutRuns": 0,
-        "passRate": 1,
+        "passRate": 0.8,
         "flakyRate": 0,
-        "lastRunAt": "2026-08-29T16:01:58.322Z"
+        "lastRunAt": "2026-08-30T15:50:47.325Z"
       },
       "done": false,
       "blockers": [
@@ -392,7 +392,8 @@
         "Uncovered critical scenario: Login, invalid login, and logout",
         "Uncovered critical scenario: Cart add, quantity, and removal",
         "Uncovered critical scenario: Checkout journey",
-        "Uncovered important scenario: Contact form behavior"
+        "Uncovered important scenario: Contact form behavior",
+        "Pass rate 80% is below 95%"
       ],
       "scenarios": [
         {
@@ -1080,6 +1081,31 @@
         "automation-exercise": {
           "weightedPercent": 41,
           "stable": true,
+          "done": false
+        }
+      }
+    },
+    {
+      "generatedAt": "2026-08-30T15:51:52.369Z",
+      "catalogVersion": 1,
+      "weightedPercent": 46.7,
+      "coveredScenarios": 16,
+      "totalScenarios": 29,
+      "stableProjects": 2,
+      "projects": {
+        "saucedemo": {
+          "weightedPercent": 55,
+          "stable": true,
+          "done": false
+        },
+        "sauce-shopify": {
+          "weightedPercent": 42.9,
+          "stable": true,
+          "done": false
+        },
+        "automation-exercise": {
+          "weightedPercent": 41,
+          "stable": false,
           "done": false
         }
       }
