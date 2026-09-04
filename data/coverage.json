@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "catalogVersion": 1,
-  "generatedAt": "2026-09-04T15:35:25.734Z",
+  "generatedAt": "2026-09-04T16:39:14.773Z",
   "definition": "Weighted functional scenarios backed by registered Playwright evidence. Test and assertion counts do not affect coverage.",
   "doneCriteria": {
     "requiredPriorities": [
@@ -17,9 +17,9 @@
     "done": false,
     "projectsDone": 1,
     "totalProjects": 3,
-    "coveredScenarios": 20,
+    "coveredScenarios": 19,
     "totalScenarios": 29,
-    "weightedPercent": 63.6,
+    "weightedPercent": 60.7,
     "stableProjects": 2,
     "requiredPriorities": [
       "critical",
@@ -370,10 +370,10 @@
       "appId": "automation-exercise",
       "appName": "Automation Exercise",
       "coverage": {
-        "coveredScenarios": 6,
+        "coveredScenarios": 5,
         "totalScenarios": 11,
-        "weightedPercent": 41,
-        "coveredWeight": 16,
+        "weightedPercent": 33.3,
+        "coveredWeight": 13,
         "totalWeight": 39,
         "priorities": {
           "critical": {
@@ -382,9 +382,9 @@
             "percent": 0
           },
           "important": {
-            "covered": 5,
+            "covered": 4,
             "total": 6,
-            "percent": 83.3
+            "percent": 66.7
           },
           "optional": {
             "covered": 1,
@@ -411,6 +411,7 @@
         "Uncovered critical scenario: Login, invalid login, and logout",
         "Uncovered critical scenario: Cart add, quantity, and removal",
         "Uncovered critical scenario: Checkout journey",
+        "Uncovered important scenario: Category and brand filtering",
         "Uncovered important scenario: Contact form behavior",
         "Pass rate 60% is below 95%"
       ],
@@ -517,14 +518,8 @@
           "priority": "important",
           "weight": 3,
           "expectedOutcome": "Category and brand navigation display matching products.",
-          "status": "covered",
-          "evidence": [
-            {
-              "spec": "generated-tests/promoted/automation-exercise/daily-automation-exercise-products.spec.js",
-              "test": "category and brand filtering display matching products [coverage:category-brand-filtering]",
-              "source": "test-tag"
-            }
-          ]
+          "status": "uncovered",
+          "evidence": []
         },
         {
           "id": "contact-form",
@@ -1230,10 +1225,10 @@
       }
     },
     {
-      "generatedAt": "2026-09-04T15:35:25.734Z",
+      "generatedAt": "2026-09-04T16:39:14.773Z",
       "catalogVersion": 1,
-      "weightedPercent": 63.6,
-      "coveredScenarios": 20,
+      "weightedPercent": 60.7,
+      "coveredScenarios": 19,
       "totalScenarios": 29,
       "stableProjects": 2,
       "projects": {
@@ -1248,7 +1243,7 @@
           "done": false
         },
         "automation-exercise": {
-          "weightedPercent": 41,
+          "weightedPercent": 33.3,
           "stable": false,
           "done": false
         }
