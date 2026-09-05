@@ -1,5 +1,36 @@
 [
   {
+    "id": "2026-09-05t15-28-37-494z-daily-automation-exercise-navigation",
+    "appId": "automation-exercise",
+    "appName": "Automation Exercise",
+    "runType": "generated",
+    "url": "https://automationexercise.com/",
+    "suiteName": "daily-automation-exercise-navigation",
+    "model": "gpt-5",
+    "status": "failed",
+    "startedAt": "2026-09-05T15:28:37.494Z",
+    "finishedAt": "2026-09-05T15:32:42.554Z",
+    "durationMs": 245060,
+    "repairsApplied": 1,
+    "generatedTests": 5,
+    "generatedAssertions": 54,
+    "exploredSteps": 5,
+    "discovered": {
+      "links": 58,
+      "forms": 1,
+      "buttons": 3,
+      "headings": 78
+    },
+    "testSummary": {
+      "passed": 0,
+      "failed": 5,
+      "skipped": 0,
+      "flaky": 0,
+      "timedOut": true
+    },
+    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/33974885379"
+  },
+  {
     "id": "20260905142211-saucedemo-committed",
     "appId": "saucedemo",
     "appName": "SauceDemo",
@@ -3687,36 +3718,5 @@
       "timedOut": false
     },
     "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/31179595360"
-  },
-  {
-    "id": "2026-08-06t14-55-51-670z-daily-saucedemo-login",
-    "appId": "saucedemo",
-    "appName": "SauceDemo",
-    "runType": "generated",
-    "url": "https://www.saucedemo.com/",
-    "suiteName": "daily-saucedemo-login",
-    "model": "gpt-5",
-    "status": "passed",
-    "startedAt": "2026-08-06T14:55:51.670Z",
-    "finishedAt": "2026-08-06T14:58:03.315Z",
-    "durationMs": 131645,
-    "repairsApplied": 1,
-    "generatedTests": 4,
-    "generatedAssertions": 29,
-    "exploredSteps": 5,
-    "discovered": {
-      "links": 0,
-      "forms": 1,
-      "buttons": 1,
-      "headings": 0
-    },
-    "testSummary": {
-      "passed": 4,
-      "failed": 0,
-      "skipped": 0,
-      "flaky": 0,
-      "timedOut": false
-    },
-    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/31113266723"
   }
 ]
