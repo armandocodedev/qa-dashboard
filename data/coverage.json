@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "catalogVersion": 1,
-  "generatedAt": "2026-09-06T15:43:23.831Z",
+  "generatedAt": "2026-09-07T17:01:22.252Z",
   "definition": "Weighted functional scenarios backed by registered Playwright evidence. Test and assertion counts do not affect coverage.",
   "doneCriteria": {
     "requiredPriorities": [
@@ -20,7 +20,7 @@
     "coveredScenarios": 15,
     "totalScenarios": 29,
     "weightedPercent": 43.9,
-    "stableProjects": 2,
+    "stableProjects": 3,
     "requiredPriorities": [
       "critical",
       "important"
@@ -64,7 +64,7 @@
         "timedOutRuns": 0,
         "passRate": 1,
         "flakyRate": 0,
-        "lastRunAt": "2026-09-06T14:44:43.180Z"
+        "lastRunAt": "2026-09-07T17:00:40.401Z"
       },
       "done": false,
       "blockers": [
@@ -239,7 +239,7 @@
         "timedOutRuns": 0,
         "passRate": 1,
         "flakyRate": 0,
-        "lastRunAt": "2026-09-06T14:44:43.180Z"
+        "lastRunAt": "2026-09-07T17:00:40.401Z"
       },
       "done": false,
       "blockers": [
@@ -375,16 +375,16 @@
         }
       },
       "stability": {
-        "stable": false,
+        "stable": true,
         "recentRuns": 5,
         "requiredRuns": 5,
-        "passedTests": 24,
-        "failedTests": 3,
+        "passedTests": 33,
+        "failedTests": 0,
         "flakyTests": 0,
         "timedOutRuns": 0,
-        "passRate": 0.889,
+        "passRate": 1,
         "flakyRate": 0,
-        "lastRunAt": "2026-09-06T14:44:43.180Z"
+        "lastRunAt": "2026-09-07T17:00:40.401Z"
       },
       "done": false,
       "blockers": [
@@ -393,8 +393,7 @@
         "Uncovered critical scenario: Cart add, quantity, and removal",
         "Uncovered critical scenario: Checkout journey",
         "Uncovered important scenario: Category and brand filtering",
-        "Uncovered important scenario: Contact form behavior",
-        "Pass rate 88.9% is below 95%"
+        "Uncovered important scenario: Contact form behavior"
       ],
       "scenarios": [
         {
@@ -1276,6 +1275,31 @@
         "automation-exercise": {
           "weightedPercent": 33.3,
           "stable": false,
+          "done": false
+        }
+      }
+    },
+    {
+      "generatedAt": "2026-09-07T17:01:22.252Z",
+      "catalogVersion": 1,
+      "weightedPercent": 43.9,
+      "coveredScenarios": 15,
+      "totalScenarios": 29,
+      "stableProjects": 3,
+      "projects": {
+        "saucedemo": {
+          "weightedPercent": 55,
+          "stable": true,
+          "done": false
+        },
+        "sauce-shopify": {
+          "weightedPercent": 42.9,
+          "stable": true,
+          "done": false
+        },
+        "automation-exercise": {
+          "weightedPercent": 33.3,
+          "stable": true,
           "done": false
         }
       }
