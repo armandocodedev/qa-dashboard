@@ -1,5 +1,36 @@
 [
   {
+    "id": "2026-09-14t18-09-02-502z-daily-shopify-catalog",
+    "appId": "sauce-shopify",
+    "appName": "Sauce Shopify",
+    "runType": "generated",
+    "url": "https://sauce-demo.myshopify.com/",
+    "suiteName": "daily-shopify-catalog",
+    "model": "gpt-5",
+    "status": "failed",
+    "startedAt": "2026-09-14T18:09:02.502Z",
+    "finishedAt": "2026-09-14T18:14:22.849Z",
+    "durationMs": 320347,
+    "repairsApplied": 1,
+    "generatedTests": 6,
+    "generatedAssertions": 48,
+    "exploredSteps": 5,
+    "discovered": {
+      "links": 21,
+      "forms": 0,
+      "buttons": 1,
+      "headings": 3
+    },
+    "testSummary": {
+      "passed": 1,
+      "failed": 5,
+      "skipped": 0,
+      "flaky": 0,
+      "timedOut": true
+    },
+    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/34878989369"
+  },
+  {
     "id": "20260914172331-saucedemo-committed",
     "appId": "saucedemo",
     "appName": "SauceDemo",
