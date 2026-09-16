@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "catalogVersion": 1,
-  "generatedAt": "2026-09-15T17:18:24.206Z",
+  "generatedAt": "2026-09-16T15:56:22.585Z",
   "definition": "Weighted functional scenarios backed by registered Playwright evidence. Test and assertion counts do not affect coverage.",
   "doneCriteria": {
     "requiredPriorities": [
@@ -58,17 +58,17 @@
         "stable": false,
         "recentRuns": 5,
         "requiredRuns": 5,
-        "passedTests": 76,
-        "failedTests": 32,
+        "passedTests": 77,
+        "failedTests": 30,
         "flakyTests": 0,
         "timedOutRuns": 5,
-        "passRate": 0.704,
+        "passRate": 0.72,
         "flakyRate": 0,
-        "lastRunAt": "2026-09-15T16:01:20.756Z"
+        "lastRunAt": "2026-09-16T15:54:53.880Z"
       },
       "done": false,
       "blockers": [
-        "Pass rate 70.4% is below 95%",
+        "Pass rate 72% is below 95%",
         "5 recent committed runs timed out"
       ],
       "scenarios": [
@@ -261,7 +261,7 @@
         "timedOutRuns": 0,
         "passRate": 1,
         "flakyRate": 0,
-        "lastRunAt": "2026-09-15T16:01:20.756Z"
+        "lastRunAt": "2026-09-16T15:54:53.880Z"
       },
       "done": false,
       "blockers": [
@@ -406,7 +406,7 @@
         "timedOutRuns": 1,
         "passRate": 0.8,
         "flakyRate": 0,
-        "lastRunAt": "2026-09-15T16:01:20.756Z"
+        "lastRunAt": "2026-09-16T15:54:53.880Z"
       },
       "done": false,
       "blockers": [
@@ -1505,6 +1505,31 @@
     },
     {
       "generatedAt": "2026-09-15T17:18:24.206Z",
+      "catalogVersion": 1,
+      "weightedPercent": 60.7,
+      "coveredScenarios": 19,
+      "totalScenarios": 29,
+      "stableProjects": 1,
+      "projects": {
+        "saucedemo": {
+          "weightedPercent": 100,
+          "stable": false,
+          "done": false
+        },
+        "sauce-shopify": {
+          "weightedPercent": 42.9,
+          "stable": true,
+          "done": false
+        },
+        "automation-exercise": {
+          "weightedPercent": 33.3,
+          "stable": false,
+          "done": false
+        }
+      }
+    },
+    {
+      "generatedAt": "2026-09-16T15:56:22.585Z",
       "catalogVersion": 1,
       "weightedPercent": 60.7,
       "coveredScenarios": 19,
