@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "catalogVersion": 1,
-  "generatedAt": "2026-09-18T15:37:05.589Z",
+  "generatedAt": "2026-09-18T16:44:18.754Z",
   "definition": "Weighted functional scenarios backed by registered Playwright evidence. Test and assertion counts do not affect coverage.",
   "doneCriteria": {
     "requiredPriorities": [
@@ -17,9 +17,9 @@
     "done": false,
     "projectsDone": 0,
     "totalProjects": 3,
-    "coveredScenarios": 15,
+    "coveredScenarios": 16,
     "totalScenarios": 29,
-    "weightedPercent": 43.9,
+    "weightedPercent": 46.7,
     "stableProjects": 2,
     "requiredPriorities": [
       "critical",
@@ -353,10 +353,10 @@
       "appId": "automation-exercise",
       "appName": "Automation Exercise",
       "coverage": {
-        "coveredScenarios": 5,
+        "coveredScenarios": 6,
         "totalScenarios": 11,
-        "weightedPercent": 33.3,
-        "coveredWeight": 13,
+        "weightedPercent": 41,
+        "coveredWeight": 16,
         "totalWeight": 39,
         "priorities": {
           "critical": {
@@ -365,9 +365,9 @@
             "percent": 0
           },
           "important": {
-            "covered": 4,
+            "covered": 5,
             "total": 6,
-            "percent": 66.7
+            "percent": 83.3
           },
           "optional": {
             "covered": 1,
@@ -394,7 +394,6 @@
         "Uncovered critical scenario: Login, invalid login, and logout",
         "Uncovered critical scenario: Cart add, quantity, and removal",
         "Uncovered critical scenario: Checkout journey",
-        "Uncovered important scenario: Category and brand filtering",
         "Uncovered important scenario: Contact form behavior"
       ],
       "scenarios": [
@@ -500,8 +499,14 @@
           "priority": "important",
           "weight": 3,
           "expectedOutcome": "Category and brand navigation display matching products.",
-          "status": "uncovered",
-          "evidence": []
+          "status": "covered",
+          "evidence": [
+            {
+              "spec": "generated-tests/promoted/automation-exercise/daily-automation-exercise-products.spec.js",
+              "test": "Brand filtering shows matching products and details [coverage:category-brand-filtering]",
+              "source": "test-tag"
+            }
+          ]
         },
         {
           "id": "contact-form",
@@ -1557,10 +1562,10 @@
       }
     },
     {
-      "generatedAt": "2026-09-18T15:37:05.589Z",
+      "generatedAt": "2026-09-18T16:44:18.754Z",
       "catalogVersion": 1,
-      "weightedPercent": 43.9,
-      "coveredScenarios": 15,
+      "weightedPercent": 46.7,
+      "coveredScenarios": 16,
       "totalScenarios": 29,
       "stableProjects": 2,
       "projects": {
@@ -1575,7 +1580,7 @@
           "done": false
         },
         "automation-exercise": {
-          "weightedPercent": 33.3,
+          "weightedPercent": 41,
           "stable": true,
           "done": false
         }
