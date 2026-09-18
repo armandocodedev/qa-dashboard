@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "catalogVersion": 1,
-  "generatedAt": "2026-09-17T17:16:03.657Z",
+  "generatedAt": "2026-09-18T15:37:05.589Z",
   "definition": "Weighted functional scenarios backed by registered Playwright evidence. Test and assertion counts do not affect coverage.",
   "doneCriteria": {
     "requiredPriorities": [
@@ -58,13 +58,13 @@
         "stable": false,
         "recentRuns": 5,
         "requiredRuns": 5,
-        "passedTests": 79,
-        "failedTests": 26,
+        "passedTests": 82,
+        "failedTests": 21,
         "flakyTests": 0,
-        "timedOutRuns": 4,
-        "passRate": 0.752,
+        "timedOutRuns": 3,
+        "passRate": 0.796,
         "flakyRate": 0,
-        "lastRunAt": "2026-09-17T16:00:31.757Z"
+        "lastRunAt": "2026-09-18T15:36:17.630Z"
       },
       "done": false,
       "blockers": [
@@ -72,8 +72,8 @@
         "Uncovered important scenario: Inventory sorting",
         "Uncovered critical scenario: Checkout field validation",
         "Uncovered critical scenario: Logout and session protection",
-        "Pass rate 75.2% is below 95%",
-        "4 recent committed runs timed out"
+        "Pass rate 79.6% is below 95%",
+        "3 recent committed runs timed out"
       ],
       "scenarios": [
         {
@@ -241,7 +241,7 @@
         "timedOutRuns": 0,
         "passRate": 1,
         "flakyRate": 0,
-        "lastRunAt": "2026-09-17T16:00:31.757Z"
+        "lastRunAt": "2026-09-18T15:36:17.630Z"
       },
       "done": false,
       "blockers": [
@@ -386,7 +386,7 @@
         "timedOutRuns": 0,
         "passRate": 1,
         "flakyRate": 0,
-        "lastRunAt": "2026-09-17T16:00:31.757Z"
+        "lastRunAt": "2026-09-18T15:36:17.630Z"
       },
       "done": false,
       "blockers": [
@@ -1533,6 +1533,31 @@
     },
     {
       "generatedAt": "2026-09-17T17:16:03.657Z",
+      "catalogVersion": 1,
+      "weightedPercent": 43.9,
+      "coveredScenarios": 15,
+      "totalScenarios": 29,
+      "stableProjects": 2,
+      "projects": {
+        "saucedemo": {
+          "weightedPercent": 55,
+          "stable": false,
+          "done": false
+        },
+        "sauce-shopify": {
+          "weightedPercent": 42.9,
+          "stable": true,
+          "done": false
+        },
+        "automation-exercise": {
+          "weightedPercent": 33.3,
+          "stable": true,
+          "done": false
+        }
+      }
+    },
+    {
+      "generatedAt": "2026-09-18T15:37:05.589Z",
       "catalogVersion": 1,
       "weightedPercent": 43.9,
       "coveredScenarios": 15,
