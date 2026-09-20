@@ -1,5 +1,98 @@
 [
   {
+    "id": "20260920151359-saucedemo-committed",
+    "appId": "saucedemo",
+    "appName": "SauceDemo",
+    "runType": "committed",
+    "url": "https://www.saucedemo.com/",
+    "suiteName": "SauceDemo regression",
+    "model": "",
+    "status": "failed",
+    "startedAt": "2026-09-20T15:13:59.392Z",
+    "finishedAt": "2026-09-20T15:14:58.453Z",
+    "durationMs": 18989,
+    "repairsApplied": 0,
+    "generatedTests": 0,
+    "generatedAssertions": 0,
+    "exploredSteps": 0,
+    "discovered": {
+      "links": 0,
+      "forms": 0,
+      "buttons": 0,
+      "headings": 0
+    },
+    "testSummary": {
+      "passed": 17,
+      "failed": 3,
+      "skipped": 0,
+      "flaky": 0,
+      "timedOut": false
+    },
+    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/35518894685"
+  },
+  {
+    "id": "20260920151359-sauce-shopify-committed",
+    "appId": "sauce-shopify",
+    "appName": "Sauce Shopify",
+    "runType": "committed",
+    "url": "https://sauce-demo.myshopify.com/",
+    "suiteName": "Sauce Shopify regression",
+    "model": "",
+    "status": "passed",
+    "startedAt": "2026-09-20T15:13:59.392Z",
+    "finishedAt": "2026-09-20T15:14:58.453Z",
+    "durationMs": 7099,
+    "repairsApplied": 0,
+    "generatedTests": 0,
+    "generatedAssertions": 0,
+    "exploredSteps": 0,
+    "discovered": {
+      "links": 0,
+      "forms": 0,
+      "buttons": 0,
+      "headings": 0
+    },
+    "testSummary": {
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "timedOut": false
+    },
+    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/35518894685"
+  },
+  {
+    "id": "20260920151359-automation-exercise-committed",
+    "appId": "automation-exercise",
+    "appName": "Automation Exercise",
+    "runType": "committed",
+    "url": "https://automationexercise.com/",
+    "suiteName": "Automation Exercise regression",
+    "model": "",
+    "status": "failed",
+    "startedAt": "2026-09-20T15:13:59.392Z",
+    "finishedAt": "2026-09-20T15:14:58.453Z",
+    "durationMs": 27624,
+    "repairsApplied": 0,
+    "generatedTests": 0,
+    "generatedAssertions": 0,
+    "exploredSteps": 0,
+    "discovered": {
+      "links": 0,
+      "forms": 0,
+      "buttons": 0,
+      "headings": 0
+    },
+    "testSummary": {
+      "passed": 8,
+      "failed": 1,
+      "skipped": 0,
+      "flaky": 0,
+      "timedOut": false
+    },
+    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/35518894685"
+  },
+  {
     "id": "2026-09-19t16-01-00-982z-daily-automation-exercise-navigation",
     "appId": "automation-exercise",
     "appName": "Automation Exercise",
@@ -3594,129 +3687,5 @@
       "timedOut": false
     },
     "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/32572879462"
-  },
-  {
-    "id": "2026-08-21t13-27-35-680z-daily-automation-exercise-products",
-    "appId": "automation-exercise",
-    "appName": "Automation Exercise",
-    "runType": "generated",
-    "url": "https://automationexercise.com/",
-    "suiteName": "daily-automation-exercise-products",
-    "model": "gpt-5",
-    "status": "passed",
-    "startedAt": "2026-08-21T13:27:35.680Z",
-    "finishedAt": "2026-08-21T13:29:35.812Z",
-    "durationMs": 120132,
-    "repairsApplied": 0,
-    "generatedTests": 6,
-    "generatedAssertions": 21,
-    "exploredSteps": 1,
-    "discovered": {
-      "links": 0,
-      "forms": 0,
-      "buttons": 0,
-      "headings": 0
-    },
-    "testSummary": {
-      "passed": 0,
-      "failed": 0,
-      "skipped": 4,
-      "flaky": 0,
-      "timedOut": false
-    },
-    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/32486858223"
-  },
-  {
-    "id": "20260821123304-saucedemo-committed",
-    "appId": "saucedemo",
-    "appName": "SauceDemo",
-    "runType": "committed",
-    "url": "https://www.saucedemo.com/",
-    "suiteName": "SauceDemo regression",
-    "model": "",
-    "status": "passed",
-    "startedAt": "2026-08-21T12:33:04.267Z",
-    "finishedAt": "2026-08-21T12:35:08.806Z",
-    "durationMs": 11145,
-    "repairsApplied": 0,
-    "generatedTests": 0,
-    "generatedAssertions": 0,
-    "exploredSteps": 0,
-    "discovered": {
-      "links": 0,
-      "forms": 0,
-      "buttons": 0,
-      "headings": 0
-    },
-    "testSummary": {
-      "passed": 23,
-      "failed": 0,
-      "skipped": 0,
-      "flaky": 0,
-      "timedOut": false
-    },
-    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/32482364414"
-  },
-  {
-    "id": "20260821123304-sauce-shopify-committed",
-    "appId": "sauce-shopify",
-    "appName": "Sauce Shopify",
-    "runType": "committed",
-    "url": "https://sauce-demo.myshopify.com/",
-    "suiteName": "Sauce Shopify regression",
-    "model": "",
-    "status": "passed",
-    "startedAt": "2026-08-21T12:33:04.267Z",
-    "finishedAt": "2026-08-21T12:35:08.806Z",
-    "durationMs": 7136,
-    "repairsApplied": 0,
-    "generatedTests": 0,
-    "generatedAssertions": 0,
-    "exploredSteps": 0,
-    "discovered": {
-      "links": 0,
-      "forms": 0,
-      "buttons": 0,
-      "headings": 0
-    },
-    "testSummary": {
-      "passed": 3,
-      "failed": 0,
-      "skipped": 0,
-      "flaky": 0,
-      "timedOut": false
-    },
-    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/32482364414"
-  },
-  {
-    "id": "20260821123304-automation-exercise-committed",
-    "appId": "automation-exercise",
-    "appName": "Automation Exercise",
-    "runType": "committed",
-    "url": "https://automationexercise.com/",
-    "suiteName": "Automation Exercise regression",
-    "model": "",
-    "status": "failed",
-    "startedAt": "2026-08-21T12:33:04.267Z",
-    "finishedAt": "2026-08-21T12:35:08.806Z",
-    "durationMs": 101991,
-    "repairsApplied": 0,
-    "generatedTests": 0,
-    "generatedAssertions": 0,
-    "exploredSteps": 0,
-    "discovered": {
-      "links": 0,
-      "forms": 0,
-      "buttons": 0,
-      "headings": 0
-    },
-    "testSummary": {
-      "passed": 3,
-      "failed": 4,
-      "skipped": 0,
-      "flaky": 0,
-      "timedOut": true
-    },
-    "sourceRunUrl": "https://github.com/armandocodedev/agentic-testing/actions/runs/32482364414"
   }
 ]
